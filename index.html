@@ -1,920 +1,201 @@
+<!DOCTYPE html>
+<html lang="it">
 
-    <!DOCTYPE html >
-<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Primary Meta Tags -->
-<title>L'autodichiarazione in pochi clic.</title>
-<meta property="og:title" content="Crea l'autodichiarazione per i tuoi spostamenti in pochi clic.">
-<meta property="og:description" content="Con miautocertifico.it puoi generare l'autodichiarazione per i tuoi spostamenti e riceverla direttamente sull’e-mail. Potrai salvarla sullo smartphone o scaricarla e stamparla.">
-<meta property="og:image" content="https://www.miautocertifico.it//assets/images/og-image.jpg">
-<meta property="og:url" content="https://www.miautocertifico.it/">
+  <!-- Primary Meta Tags -->
+  <title>L'autodichiarazione in pochi clic.</title>
+  <meta property="og:title" content="Crea l'autodichiarazione per i tuoi spostamenti in pochi clic.">
+  <meta property="og:description"
+    content="Con miautocertifico.it puoi generare l'autodichiarazione per i tuoi spostamenti e riceverla direttamente sull’e-mail. Potrai salvarla sullo smartphone o scaricarla e stamparla.">
+  <meta property="og:image" content="https://www.miautocertifico.it//assets/images/og-image.jpg">
+  <meta property="og:url" content="https://www.miautocertifico.it/">
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.miautocertifico.it/">
-<meta property="og:title" content="Crea l'autodichiarazione per i tuoi spostamenti in pochi clic.">
-<meta property="og:description" content="Con miautocertifico.it puoi generare l'autodichiarazione per i tuoi spostamenti e riceverla direttamente sull’e-mail. Potrai salvarla sullo smartphone o scaricarla e stamparla.">
-<meta property="og:image" content="https://www.miautocertifico.it//assets/images/og-image.jpg">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.miautocertifico.it/">
+  <meta property="og:title" content="Crea l'autodichiarazione per i tuoi spostamenti in pochi clic.">
+  <meta property="og:description"
+    content="Con miautocertifico.it puoi generare l'autodichiarazione per i tuoi spostamenti e riceverla direttamente sull’e-mail. Potrai salvarla sullo smartphone o scaricarla e stamparla.">
+  <meta property="og:image" content="https://www.miautocertifico.it//assets/images/og-image.jpg">
 
-<!-- Open Graph / Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://www.miautocertifico.it/">
-<meta property="twitter:title" content="Crea l'autodichiarazione per i tuoi spostamenti in pochi clic.">
-<meta property="twitter:description" content="Con miautocertifico.it puoi generare l'autodichiarazione per i tuoi spostamenti e riceverla direttamente sull’e-mail. Potrai salvarla sullo smartphone o scaricarla e stamparla.">
-<meta property="twitter:image" content="https://www.miautocertifico.it//assets/images/og-image.jpg">
+  <!-- Open Graph / Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.miautocertifico.it/">
+  <meta property="twitter:title" content="Crea l'autodichiarazione per i tuoi spostamenti in pochi clic.">
+  <meta property="twitter:description"
+    content="Con miautocertifico.it puoi generare l'autodichiarazione per i tuoi spostamenti e riceverla direttamente sull’e-mail. Potrai salvarla sullo smartphone o scaricarla e stamparla.">
+  <meta property="twitter:image" content="https://www.miautocertifico.it//assets/images/og-image.jpg">
 
-<script src="//code.jquery.com/jquery-1.12.0.min.js" async></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-<script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    crossorigin="anonymous">
 
-<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-<meta charset="utf-8" />
-    
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
 
-input[type=text], select, textarea {
-  width: 100%;
-  height: 50px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
-
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-</style>
-
-
-
-<style>
-
-.mobile-container {
-  max-width: 480px;
-  margin: auto;
-  background-color: #555;
-  height: 500px;
-  color: white;
-  border-radius: 10px;
-}
-
-.topnav {
-  overflow: hidden;
-  background-color: #2e6596;
-  position: relative;
-}
-
-.topnav #myLinks {
-  display: none;
-}
-
-.topnav a {
-  color: white;
-  padding: 33px 33px;
-  text-decoration: none;
-  font-size: 18px;
-  display: block;
-}
-
-.topnav a.icon {
-  background: #2e6596;
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.topnav a:hover {
-  background-color: #2e6596;
-  color: black;
-}
-
-.active {
-  background-color: #4CAF50;
-  color: white;
-}
-</style>
-
-
+  <!-- Custom styles for this template -->
+  <link href="assets/css/sticky-footer-navbar.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- <link rel="stylesheet" href="assets/css/style-old.css"> -->
 </head>
 
-<body id="target" style="margin: 0;" >
+<body>
+  <header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark py-1">
+      <a class="navbar-brand" href="#"><img src="assets/images/logo.svg" width="250px;"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Autocertificazione <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Domande Frequenti</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Privacy</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm text-center">
+        <h1><b>La tua autodichiarazione da stampare in pochi semplici e facili clic.</b></h1> 
+        <h5 class="pt-5">Con miautocertifico.it puoi generare la tua dichiarazione e riceverla direttamente sull’e-mail. Potrai salvarla sullo smartphone o scaricarla e stamparla.</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+
+  <form style="padding-top: 120px;">
+    <div class="form-row pt-1">
+      <div class="form-group col-md-4">
+        <label><b>Nome</b></label> <input type="text" class="form-control border border-dark" >
+      </div>
+      <div class="form-group col-md-5">
+        <label><b>Cognome</b></label> <input type="text" class="form-control border border-dark" >
+      </div>
+      <div class="form-group col-md-3">
+          <label><b>Nato il</b></label> <input type="date" type="password" class="form-control border border-dark" >
+      </div>
+    </div>
+
+      <div class="form-row pt-1">
+        <div class="form-group col-md-4">
+          <label><b>A</b></label> <input type="text" class="form-control border border-dark" placeholder="Comune di nascita">
+        </div>
+        <div class="form-group col-md-4">
+          <label><b>Residente in</b></label> <input type="text" class="form-control border border-dark" placeholder="Comune di residenza">
+        </div>
+        <div class="form-group col-md-4">
+          <label><b>Via e n° civico</b></label> <input type="text" class="form-control border border-dark"
+            placeholder="Comune di nascita">
+        </div>
+      </div>
+
+       <div class="form-row pt-1">
+         <div class="form-group col-md-4">
+           <label><b>Identificato a mezzo</b></label> <input type="text" class="form-control border border-dark"
+             placeholder="Documento di identificazione">
+         </div>
+         <div class="form-group col-md-5">
+           <label><b>Rilasciato da</b></label> <input type="text" class="form-control border border-dark">
+         </div>
+         <div class="form-group col-md-3">
+           <label><b>In data</b></label> <input type="date" class="form-control border border-dark">
+         </div>
+         
+       </div>
+
+       <div class="form-row pt-1">
+         <div class="form-group col-md-6">
+           <label><b>Nr.</b></label> <input type="text" class="form-control border border-dark"
+             placeholder="Numero di documento">
+         </div>
+         <div class="form-group col-md-6">
+           <label><b>Utenza telefonica</b></label> <input type="text" class="form-control border border-dark"
+             placeholder="Numero di telefono">
+         </div>
+       </div>
+
+       <div class="form-row pt-1">
+         <div class="form-group col-md-6">
+           <label><b>Spostamento iniziato da</b></label> <input type="text" class="form-control border border-dark">
+         </div>
+         <div class="form-group col-md-6">
+           <label><b>Destinazione</b></label> <input type="text" class="form-control border border-dark">
+         </div>
+       </div>
 
 
-<header style="background-color: #2e6596;">
-	
-	<div class="topnav">
-  <img src="assets/images/logo.svg" width="350px;" style="padding:15px;">
-  <div id="myLinks">
-    <a href="#form">Autocertificazione</a>
-    <a href="#faq">Domande Frequenti</a>
-    <a href="#privacy">Privacy</a>
+        <div class="form-row pt-1">
+          <div class="form-group col-md-12">
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="reason" value="option1" checked>
+  <label class="form-check-label">comprovate esigenze lavorative;</label></div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="reason" value="option2" checked>
+  <label class="form-check-label">assoluta urgenza (“per trasferimenti in comune diverso”, come previsto dall’art. 1,
+    comma 1, lettera b) del Decreto del Presidente del Consiglio dei Ministri 22 marzo 2020);</label></div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="reason" value="option3" checked>
+  <label class="form-check-label">situazione di necessità (per spostamenti all’interno dello stesso comune, come
+    previsto dall’art. 1, comma 1, lett. a) del Decreto del Presidente del Consiglio dei Ministri 8 marzo 2020 e art. 1
+    del Decreto del Presidente del Consiglio dei Ministri 9 marzo 2020);</label></div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="reason" value="option4" checked>
+  <label class="form-check-label">motivi di salute.</label></div>
+          </div></div>
+ <div class="form-row pt-1">
+
+           <div class="form-group col-md-12">
+             <label >A questo riguardo, dichiara che</label>
+             <textarea class="form-control border border-dark" rows="3" placeholder="(lavoro presso ..., devo effettuare una visita medica, rientro dall’estero, altri motivi particolari,
+etc....)"></textarea>
+           </div></div>
+ </div>
+ </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
+
+      </div>
+    </div>
   </div>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
-</header>
-	
 
-<div class="container">
-	<form>
-		<label for="nome">Nome e Cognome</label>
-<input type="text" name="nome" value="" id="nome" placeholder="Nome e Cognome" required>
-<label for="nascita">Data di nascita</label>
-<input type="text" name="nascita" value="" id="nascita" placeholder="Data di nascita" required>
-<label for="comunenascita">Comune di nascita</label>
-<input type="text" name="comunenascita" value="" id="comunenascita" placeholder="Comune di nascita" required>
-<label for="comuneresidenza">Comune di residenza</label>
-<input type="text" name="comuneresidenza" value="" id="comuneresidenza" placeholder="Comune di residenza" required>
-<label for="via">Indirizzo di residenza</label>
-<input type="text" name="via" value="" id="via" placeholder="in Via" required>
-<label for="doc">Documento di riconoscimento</label>
-<select name="doc"  id="doc" placeholder="Documento" required >
-	<option value="">Scegli un documento valido<option>
-<option value="Carta d'Identità">Carta d'identità</option>
-<option value="Patente di guida">Patente di guida</option>
-<option value="Passaporto">Passaporto</option>
-</select>
-<label for="numerodoc">Numero documento</label>
-<input type="text" name="numerodoc" value="" id="numerodoc" placeholder="Numero documento" required>
-<label for="comunedatarilascio">Comune e data di rilascio</label>
-<input type="text" name="comunedatarilascio" value="" id="comunedatarilascio" placeholder="Comune e data di rilascio" required >
-<label for="telefono">Telefono</label>
-<input type="text" name="telefono" value="" id="telefono" placeholder="Recapito telefonico" required>
 
 
-<input id="radio4" type="radio" tabindex="10" data-objref="39 0 R" data-field-name="Group1" name="motivo" value="Scelta1" imageName="1/form/39 0 R" images="110100" checked="" /><label for="dichiarazione"> comprovate esigenze lavorative;</label><br>
+  </main>
 
-<input id="radio2" type="radio" tabindex="11" data-objref="40 0 R" data-field-name="Group1" name="motivo" value="Scelta2" imageName="1/form/40 0 R" images="110100"/>
-<label for="dichiarazione"> situazioni di necessità;</label><br>
-<input id="radio1" type="radio" tabindex="12" data-objref="41 0 R" data-field-name="Group1" name="motivo" value="Scelta3" imageName="1/form/41 0 R" images="110100"/>
-<label for="dichiarazione"> motivi di salute;</label><br>
-<input id="radio3" type="radio" tabindex="13" data-objref="42 0 R" data-field-name="Group1" name="motivo" value="Scelta4" imageName="1/form/42 0 R" images="110100"/>
-<label for="dichiarazione"> rientro presso il proprio domicilio o residenza.</label>
-<br><br>
+  <footer class="footer">
+    <div class="container text-center">
+      <span class="text-muted">Copyright © di www.miautocertifico.it - realizzato da Fabrizio Cotugno e Gianmarco
+        Giordani</span>
+    </div>
+  </footer>
 
-<label for="dichiarazione">Testo dichiarazione</label>
-<textarea id="dichiarazione" name="dichiarazione" value="" placeholder="Testo dichiarazione" required></textarea>
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous">
+  </script>
 
+  <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 
-
-<div class="col-md-12">
-		 		<canvas id="sig-canvas" width="370" height="160" style="touch-action: none;">
-		 			Utilizza un'altro browser.
-		 		</canvas>
-		 	</div>
-		 	
-
-</form>
-</div>
-
-
-<textarea style="display:none;" id="sig-dataUrl" class="form-control" rows="5"></textarea>
-
-<div >
-				<img id="sig-image" src="" / style="display: none;">
-			</div>
-
-<button style=" background-color: red;" class="btn btn-default" id="sig-clearBtn">Cancella firma</button>
-<button  id="sig-submitBtn" onclick="CreatePDFfromHTML();"> Genera PDF</button>    
-
-
-
-<footer style="background-color: #333;" > <p style="color:#fff; text-align:center; "> Copyright © di www.miautocertifico.it - realizzato da Fabrizio Cotugno e Gianmarco Giordani</p></footer>
-
-
-<div id="p1" class="pageArea" style="overflow: hidden; position: relative; width: 909px; height: 1286px; margin-top:20px; margin-left:auto; margin-right:auto; background-color: white; display: block;">
-
-
-
-<!-- Begin shared CSS values -->
-<style class="shared-css" type="text/css" >
-.t {
-	-webkit-transform-origin: bottom left;
-	-ms-transform-origin: bottom left;
-	transform-origin: bottom left;
-	-webkit-transform: scale(0.25);
-	-ms-transform: scale(0.25);
-	transform: scale(0.25);
-	z-index: 2;
-	position: absolute;
-	white-space: pre;
-	overflow: visible;
-	line-height: 1.5;
-}
-</style>
-<!-- End shared CSS values -->
-<style type="text/css" >
-#sig-canvas {
-  border: 2px dotted #CCCCCC;
-  border-radius: 15px;
-  cursor: crosshair;
-}
-</style>
-<!-- Begin inline CSS -->
-<style type="text/css" >
-
-#t1_1{left:614px;bottom:1178px;}
-#t2_1{left:653px;bottom:1178px;letter-spacing:-0.7px;}
-#t3_1{left:821px;bottom:1178px;}
-#t4_1{left:697px;bottom:1062px;}
-#t5_1{left:526px;bottom:1116px;}
-#t6_1{left:454px;bottom:1061px;}
-#t7_1{left:80px;bottom:956px;}
-#t8_1{left:90px;bottom:956px;}
-#t9_1{left:134px;bottom:956px;}
-#ta_1{left:202px;bottom:956px;}
-#tb_1{left:235px;bottom:956px;}
-#tc_1{left:276px;bottom:956px;}
-#td_1{left:296px;bottom:956px;word-spacing:-0.3px;}
-#te_1{left:636px;bottom:956px;word-spacing:-0.1px;}
-#tf_1{left:218px;bottom:880px;word-spacing:0.3px;}
-#tg_1{left:88px;bottom:853px;}
-#th_1{left:116px;bottom:853px;}
-#ti_1{left:203px;bottom:853px;}
-#tj_1{left:659px;bottom:853px;}
-#tk_1{left:116px;bottom:829px;}
-#tl_1{left:220px;bottom:829px;}
-#tm_1{left:301px;bottom:829px;}
-#tn_1{left:703px;bottom:829px;}
-#to_1{left:821px;bottom:829px;}
-#tp_1{left:116px;bottom:805px;}
-#tq_1{left:324px;bottom:805px;}
-#tr_1{left:726px;bottom:805px;}
-#ts_1{left:771px;bottom:805px;}
-#tt_1{left:116px;bottom:782px;}
-#tu_1{left:160px;bottom:782px;}
-#tv_1{left:258px;bottom:782px;}
-#tw_1{left:741px;bottom:782px;}
-#tx_1{left:116px;bottom:758px;}
-#ty_1{left:196px;bottom:758px;}
-#tz_1{left:88px;bottom:734px;}
-#t10_1{left:116px;bottom:734px;}
-#t11_1{left:570px;bottom:734px;}
-#t12_1{left:116px;bottom:710px;}
-#t13_1{left:347px;bottom:710px;}
-#t14_1{left:741px;bottom:710px;}
-#t15_1{left:116px;bottom:686px;}
-#t16_1{left:490px;bottom:686px;}
-#t17_1{left:88px;bottom:662px;}
-#t18_1{left:116px;bottom:662px;}
-#t19_1{left:116px;bottom:639px;}
-#t1a_1{left:634px;bottom:639px;}
-#t1b_1{left:644px;bottom:639px;}
-#t1c_1{left:683px;bottom:639px;}
-#t1d_1{left:116px;bottom:615px;}
-#t1e_1{left:415px;bottom:615px;}
-#t1f_1{left:568px;bottom:615px;}
-#t1g_1{left:791px;bottom:615px;}
-#t1h_1{left:116px;bottom:591px;}
-#t1i_1{left:396px;bottom:591px;}
-#t1j_1{left:116px;bottom:551px;}
-#t1k_1{left:242px;bottom:468px;word-spacing:1.3px;}
-#t1l_1{left:242px;bottom:438px;word-spacing:-1.4px;}
-#t1m_1{left:242px;bottom:408px;word-spacing:-1.4px;}
-#t1n_1{left:242px;bottom:378px;}
-#t1o_1{left:86px;bottom:508px;}
-#t1p_1{left:376px;bottom:508px;}
-#t1q_1{left:86px;bottom:260px;}
-#t1r_1{left:791px;bottom:260px;}
-#t1s_1{left:801px;bottom:260px;}
-#t1t_1{left:86px;bottom:236px;}
-#t1u_1{left:93px;bottom:236px;word-spacing:21.5px;}
-#t1v_1{left:86px;bottom:212px;}
-#t1w_1{left:144px;bottom:212px;}
-#t1x_1{left:88px;bottom:165px;word-spacing:-0.2px;}
-#t1y_1{left:91px;bottom:78px;word-spacing:-0.8px;}
-#t1z_1{left:628px;bottom:62px;word-spacing:-0.8px;}
-#t20_1{left:86px;bottom:338px;}
-#t21_1{left:73px;bottom:1004px;}
-#t22_1{left:106px;bottom:1179px;word-spacing:-0.1px;}
-#t23_1{left:280px;bottom:1006px;}
-#t24_1{left:285px;bottom:1006px;}
-#t25_1{left:588px;bottom:1001px;}
-#t26_1{left:598px;bottom:1001px;}
-#t27_1{left:212px;bottom:1117px;word-spacing:-0.2px;}
-#t28_1{left:92px;bottom:1062px;word-spacing:-0.2px;}
-
-.s1{
-	FONT-SIZE: 79.4px;
-	FONT-FAMILY: TimesNewRoman_67;
-	color: rgb(0,0,0);
-}
-
-.s2{
-	FONT-SIZE: 79.4px;
-	FONT-FAMILY: TimesNewRoman_60;
-	color: rgb(0,0,0);
-}
-
-.s3{
-	FONT-SIZE: 79.4px;
-	FONT-FAMILY: TimesNewRoman_6s;
-	color: rgb(0,0,0);
-}
-
-.s4{
-	FONT-SIZE: 79.4px;
-	FONT-FAMILY: TimesNewRomanPS-BoldMT_g;
-	color: rgb(0,0,0);
-}
-
-.s5{
-	FONT-SIZE: 79.4px;
-	FONT-FAMILY: TimesNewRomanPS-BoldMT_h;
-	color: rgb(0,0,0);
-}
-
-.s6{
-	FONT-SIZE: 79.4px;
-	FONT-FAMILY: Wingdings-Regular_7h;
-	color: rgb(0,0,0);
-}
-
-.s7{
-	FONT-SIZE: 79.4px;
-	FONT-FAMILY: TimesNewRomanPSMT_6l;
-	color: rgb(0,0,0);
-}
-
-.s8{
-	FONT-SIZE: 79.4px;
-	FONT-FAMILY: TimesNewRomanPS-BoldMT_94;
-	color: rgb(0,0,0);
-}
-
-.s9{
-	FONT-SIZE: 79.4px;
-	FONT-FAMILY: TimesNewRomanPS-BoldItalicMT_7v;
-	color: rgb(0,0,0);
-}
-
-.sa{
-	FONT-SIZE: 79.4px;
-	FONT-FAMILY: TimesNewRoman-Bold_74;
-	color: rgb(0,0,0);
-}
-
-.sb{
-	FONT-SIZE: 79.4px;
-	FONT-FAMILY: TimesNewRomanPS-ItalicMT_7o;
-	color: rgb(0,0,0);
-}
-
-.sc{
-	FONT-SIZE: 79.4px;
-	FONT-FAMILY: TimesNewRomanPSMT_8z;
-	color: rgb(0,0,0);
-}
-
-.sd{
-	FONT-SIZE: 79.4px;
-	FONT-FAMILY: TimesNewRomanPSMT_8e;
-	color: rgb(0,0,0);
-}
-
-.se{
-	FONT-SIZE: 79.4px;
-	FONT-FAMILY: TimesNewRomanPS-ItalicMT_8l;
-	color: rgb(0,0,0);
-}
-
-.sf{
-	FONT-SIZE: 79.4px;
-	FONT-FAMILY: TimesNewRomanPS-ItalicMT_87;
-	color: rgb(0,0,0);
-}
-
-.sg{
-	FONT-SIZE: 79.4px;
-	FONT-FAMILY: TimesNewRoman_5v;
-	color: rgb(0,0,0);
-}
-
-.sh{
-	FONT-SIZE: 79.4px;
-	FONT-FAMILY: TimesNewRoman_80;
-	color: rgb(0,0,0);
-}
-
-#form1_1{	z-index: 2;	border-style: none;	padding: 0px;	position: absolute;	left: 211px;	top: 851px;	width: 28px;	height: 28px;	color: rgb(0,0,0);	text-align: left;	background-color: rgb(255,255,255);	font: normal 18px Arial, Helvetica, sans-serif;}
-#form2_1{	z-index: 2;	border-style: none;	padding: 0px;	position: absolute;	left: 211px;	top: 821px;	width: 28px;	height: 28px;	color: rgb(0,0,0);	text-align: left;	background-color: rgb(255,255,255);	font: normal 18px Arial, Helvetica, sans-serif;}
-#form3_1{	z-index: 2;	border-style: none;	padding: 0px;	position: absolute;	left: 211px;	top: 880px;	width: 28px;	height: 28px;	color: rgb(0,0,0);	text-align: left;	background-color: rgb(255,255,255);	font: normal 18px Arial, Helvetica, sans-serif;}
-#form4_1{	z-index: 2;	border-style: none;	padding: 0px;	position: absolute;	left: 211px;	top: 790px;	width: 28px;	height: 28px;	color: rgb(0,0,0);	text-align: left;	background-color: rgb(255,255,255);	font: normal 18px Arial, Helvetica, sans-serif;}
-#form5_1{	z-index: 2;	padding: 0px;	position: absolute;	left: 688px;	top: 70px;	width: 118px;	height: 43px;	color: rgb(0,0,0);	text-align: left;	background: transparent;	border: none;	font: normal 19px 'Times New Roman', Times, serif;}
-#form6_1{	z-index: 2;	resize: none;	padding: 0px;	position: absolute;	left: 87px;	top: 132px;	width: 118px;	height: 48px;	color: rgb(0,0,0);	text-align: left;	background: transparent;	border: none;	font: normal 18px 'Times New Roman', Times, serif;}
-#form7_1{	z-index: 2;	padding: 0px;	position: absolute;	left: 98px;	top: 240px;	width: 180px;	height: 46px;	color: rgb(0,0,0);	text-align: left;	background: transparent;	border: none;	font: normal 18px 'Times New Roman', Times, serif;}
-#form8_1{	z-index: 2;	padding: 0px;	position: absolute;	left: 425px;	top: 242px;	width: 155px;	height: 46px;	color: rgb(0,0,0);	text-align: left;	background: transparent;	border: none;	font: normal 19px 'Times New Roman', Times, serif;}
-#form9_1{	z-index: 2;	resize: none;	padding: 0px;	position: absolute;	left: 321px;	top: 129px;	width: 188px;	height: 48px;	color: rgb(0,0,0);	text-align: left;	background: transparent;	border: none;	font: normal 18px 'Times New Roman', Times, serif;}
-#form10_1{	z-index: 2;	padding: 0px;	position: absolute;	left: 251px;	top: 182px;	width: 196px;	height: 48px;	color: rgb(0,0,0);	text-align: left;	background: transparent;	border: none;	font: normal 18px 'Times New Roman', Times, serif;}
-#form11_1{	z-index: 2;	padding: 0px;	position: absolute;	left: 477px;	top: 182px;	width: 209px;	height: 48px;	color: rgb(0,0,0);	text-align: left;	background: transparent;	border: none;	font: normal 18px 'Times New Roman', Times, serif;}
-#form12_1{	z-index: 2;	resize: none;	padding: 0px;	position: absolute;	left: 564px;	top: 129px;	width: 255px;	height: 48px;	color: rgb(0,0,0);	text-align: left;	background: transparent;	border: none;	font: normal 18px 'Times New Roman', Times, serif;}
-#form13_1{	z-index: 2;	padding: 0px;	position: absolute;	left: 228px;	top: 66px;	width: 367px;	height: 46px;	color: rgb(0,0,0);	text-align: left;	background: transparent;	border: none;	font: normal 19px 'Times New Roman', Times, serif;}
-#form14_1{	z-index: 2;	resize: none;	padding: 0px;	position: absolute;	left: 84px;	top: 1125px;	width: 475px;	height: 52px;	color: rgb(0,0,0);	text-align: left;	background: transparent;	border: none;	font: normal 19px 'Times New Roman', Times, serif;}
-#form15_1{	z-index: 2;	resize: none;	padding: 0px;	position: absolute;	left: 80px;	top: 947px;	width: 738px;	height: 72px;	color: rgb(0,0,0);	text-align: left;	background: transparent;	border: none;	font: normal 19px 'Times New Roman', Times, serif;}
-#form2_1 { z-index:5; }
-#form3_1 { z-index:4; }
-#form4_1 { z-index:3; }
-#form1_1 { z-index:2; }
-
-</style>
-<!-- End inline CSS -->
-
-<!-- Begin embedded font definitions -->
-<style id="fonts1" type="text/css" >
-
-@font-face {
-	font-family: TimesNewRoman-Bold_74;
-	src: url("assets/fonts/TimesNewRoman-Bold_74.woff") format("woff");
-}
-
-@font-face {
-	font-family: TimesNewRomanPS-BoldItalicMT_7v;
-	src: url("assets/fonts/TimesNewRomanPS-BoldItalicMT_7v.woff") format("woff");
-}
-
-@font-face {
-	font-family: TimesNewRomanPS-BoldMT_94;
-	src: url("assets/fonts/TimesNewRomanPS-BoldMT_94.woff") format("woff");
-}
-
-@font-face {
-	font-family: TimesNewRomanPS-BoldMT_g;
-	src: url("assets/fonts/TimesNewRomanPS-BoldMT_g.woff") format("woff");
-}
-
-@font-face {
-	font-family: TimesNewRomanPS-BoldMT_h;
-	src: url("assets/fonts/TimesNewRomanPS-BoldMT_h.woff") format("woff");
-}
-
-@font-face {
-	font-family: TimesNewRomanPS-ItalicMT_7o;
-	src: url("assets/fonts/TimesNewRomanPS-ItalicMT_7o.woff") format("woff");
-}
-
-@font-face {
-	font-family: TimesNewRomanPS-ItalicMT_87;
-	src: url("assets/fonts/TimesNewRomanPS-ItalicMT_87.woff") format("woff");
-}
-
-@font-face {
-	font-family: TimesNewRomanPS-ItalicMT_8l;
-	src: url("assets/fonts/TimesNewRomanPS-ItalicMT_8l.woff") format("woff");
-}
-
-@font-face {
-	font-family: TimesNewRomanPSMT_6l;
-	src: url("assets/fonts/TimesNewRomanPSMT_6l.woff") format("woff");
-}
-
-@font-face {
-	font-family: TimesNewRomanPSMT_8e;
-	src: url("assets/fonts/TimesNewRomanPSMT_8e.woff") format("woff");
-}
-
-@font-face {
-	font-family: TimesNewRomanPSMT_8z;
-	src: url("assets/fonts/TimesNewRomanPSMT_8z.woff") format("woff");
-}
-
-@font-face {
-	font-family: TimesNewRoman_5v;
-	src: url("assets/fonts/TimesNewRoman_5v.woff") format("woff");
-}
-
-@font-face {
-	font-family: TimesNewRoman_60;
-	src: url("assets/fonts/TimesNewRoman_60.woff") format("woff");
-}
-
-@font-face {
-	font-family: TimesNewRoman_67;
-	src: url("assets/fonts/TimesNewRoman_67.woff") format("woff");
-}
-
-@font-face {
-	font-family: TimesNewRoman_6s;
-	src: url("assets/fonts/TimesNewRoman_6s.woff") format("woff");
-}
-
-@font-face {
-	font-family: TimesNewRoman_80;
-	src: url("assets/fonts/TimesNewRoman_80.woff") format("woff");
-}
-
-@font-face {
-	font-family: Wingdings-Regular_7h;
-	src: url("assets/fonts/Wingdings-Regular_7h.woff") format("woff");
-}
-
-</style>
-<!-- End embedded font definitions -->
-
-<!-- Begin page background -->
-<div id="pg1Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
-<div id="pg1" style="-webkit-user-select: none;"><object width="909" height="1286" data="1/1.svg" type="image/svg+xml" id="pdf1" style="width:909px; height:1286px; -moz-transform:scale(1); z-index: 0;"></object></div>
-<!-- End page background -->
-
-
-<!-- Begin text definitions (Positioned/styled in CSS) -->
-<div id="t1_1" class="t s1">nato</div>
-<div id="t2_1" class="t s1">il </div>
-<div id="t3_1" class="t s1">a </div>
-<div id="t4_1" class="t s2">, rilasciato/a</div>
-<div id="t5_1" class="t s1">via </div>
-<div id="t6_1" class="t s1">nr. </div>
-<div id="t7_1" class="t s3">p</div>
-<div id="t8_1" class="t s1">enali</div>
-<div id="t9_1" class="t s1">previste</div>
-<div id="ta_1" class="t s1">in </div>
-<div id="tb_1" class="t s1">caso</div>
-<div id="tc_1" class="t s1">di</div>
-<div id="td_1" class="t s1">dichiarazioni mendaci a pubblico ufficiale </div>
-<div id="te_1" class="t s4">(art 495 c.p.)</div>
-<div id="tf_1" class="t s5">DICHIARA SOTTO LA PROPRIA RESPONSABILITÀ </div>
-<div id="tg_1" class="t s6">➢</div>
-<div id="th_1" class="t s7">GL HVVHUH D </div>
-<div id="ti_1" class="t s8">conoscenza delle misure di contenimento del contagio</div>
-<div id="tj_1" class="t s7">GL FXL DO FRPELQDWR</div>
-<div id="tk_1" class="t s7">GLVSRVWR GHOO±</div>
-<div id="tl_1" class="t s8">art. 1 del </div>
-<div id="tm_1" class="t s9">Decreto del Presidente del Consiglio dei Ministri</div>
-<div id="tn_1" class="t s8">8 marzo 2020</div>
-<div id="to_1" class="t s8">e</div>
-<div id="tp_1" class="t s8">dell'art. 1, comma 1, del </div>
-<div id="tq_1" class="t s9">Decreto del Presidente del Consiglio dei Ministri </div>
-<div id="tr_1" class="t s8">del 9</div>
-<div id="ts_1" class="t s8">marzo</div>
-<div id="tt_1" class="t s8">2020 </div>
-<div id="tu_1" class="t s7">FRQFHUQHQWL </div>
-<div id="tv_1" class="t s8">lo spostamento delle persone fisiche all'interno di tutto il</div>
-<div id="tw_1" class="t s8">territorio</div>
-<div id="tx_1" class="t s8">nazionale</div>
-<div id="ty_1" class="t s7">²</div>
-<div id="tz_1" class="t s6">➢</div>
-<div id="t10_1" class="t s8">di non essere sottoposto alla misura della quarantena</div>
-<div id="t11_1" class="t s7">H GL QRQ HVVHUH ULVXOWDWR SRVLWLYR</div>
-<div id="t12_1" class="t s7">DO YLUXV &amp;29,'³´µ GL FXL DOO±</div>
-<div id="t13_1" class="t s8">articolo 1, comma 1, lettera c), del Decreto del</div>
-<div id="t14_1" class="t s8">Presidente</div>
-<div id="t15_1" class="t s8">del Consiglio dei Ministri dell' 8 marzo 2020</div>
-<div id="t16_1" class="t s7">²</div>
-<div id="t17_1" class="t s6">➢</div>
-<div id="t18_1" class="t s8">di essere a conoscenza delle sanzioni previste, dal combinato disposto dell'art. 3,</div>
-<div id="t19_1" class="t s8">comma 4, del D.L. 23 febbraio 2020, n. 6 e dell'art. 4, comma </div>
-<div id="t1a_1" class="t sa">2</div>
-<div id="t1b_1" class="t s7">¶ GHO </div>
-<div id="t1c_1" class="t sb">Decreto del</div>
-<div id="t1d_1" class="t sb">Presidente del Consiglio dei Ministri</div>
-<div id="t1e_1" class="t s7">GHOO± · PDU]R ¸¹¸¹ </div>
-<div id="t1f_1" class="t s8">in caso di inottemperanza</div>
-<div id="t1g_1" class="t s8">delle</div>
-<div id="t1h_1" class="t s8">predette misure di contenimento</div>
-<div id="t1i_1" class="t s7">ºDUW» ¼½¹ F»S» VDOYR FKH LO IDWWR QRQ FRVWLWXLVFD</div>
-<div id="t1j_1" class="t s7">SL¾ JUDYH UHDWR¿² </div>
-<div id="t1k_1" class="t s1">    comprovate esigenze lavorative</div>
-<div id="t1l_1" class="t s1">    situazioni di necessità;</div>
-<div id="t1m_1" class="t s1">    motivi di salute;</div>
-<div id="t1n_1" class="t s1">    rientro presso il proprio domicilio, abitazione o residenza.</div>
-<div id="t1o_1" class="t s7">FKH OR VSRVWDPHQWR q GHWHUPLQDWR GD</div>
-<div id="t1p_1" class="t s1">: </div>
-<div id="t1q_1" class="t sc">_______________________________________________________________________</div>
-<div id="t1r_1" class="t sd">_</div>
-<div id="t1s_1" class="t sc">_</div>
-<div id="t1t_1" class="t s1">(</div>
-<div id="t1u_1" class="t se">LAVORO PRESSO…, STO RIENTRANDO AL MIO DOMICILIO SITO IN…..,</div>
-<div id="t1v_1" class="t se">DEVO</div>
-<div id="t1w_1" class="t sf">EFFETTUARE UNA VISITA MEDICA… ALTRI MOTIVI PARTICOLARI..ETC…)</div>
-<div id="t1x_1" class="t s1">Data, ora e luogo del controllo </div>
-<div id="t1y_1" class="t s1">Firma del dichiarante </div>
-<div id="t1z_1" class="t s1">L’Operatore di Polizia </div>
-<div id="t20_1" class="t s1">A questo riguardo, dichiara che: </div>
-<div id="t21_1" class="t sg">il</div>
-<div id="t22_1" class="t s3">Il sottoscritto</div>
-<div id="t23_1" class="t s2">, </div>
-<div id="t24_1" class="t s3">utenza telefonica</div>
-<div id="t25_1" class="t s2">, </div>
-<div id="t26_1" class="t s3">consapevole delle conseguenze</div>
-<div id="t27_1" class="t sh">residente in</div>
-<div id="t28_1" class="t sh">identificato mezzo</div>
-
-
-
-
-
-<form>
-<input id="form1_1" type="radio" tabindex="12" data-objref="41 0 R" data-field-name="Group1" name="Group1" value="Scelta3" imageName="1/form/41 0 R" images="110100"/>
-<input id="form2_1" type="radio" tabindex="11" data-objref="40 0 R" data-field-name="Group1" name="Group1" value="Scelta2" imageName="1/form/40 0 R" images="110100"/>
-<input id="form3_1" type="radio" tabindex="13" data-objref="42 0 R" data-field-name="Group1" name="Group1" value="Scelta4" imageName="1/form/42 0 R" images="110100"/>
-<input id="form4_1" type="radio" tabindex="10" data-objref="39 0 R" data-field-name="Group1" name="Group1" value="Scelta1" imageName="1/form/39 0 R" images="110100"/>
-<input id="form5_1" type="text" tabindex="2" value="" data-objref="31 0 R" title="data di nascita" data-field-name="data di nascita"/>
-<textarea id="form6_1" tabindex="3" data-objref="32 0 R" title="luogo di nascita" data-field-name="luogo di nascita"></textarea>
-<input id="form7_1" type="text" tabindex="8" value="" data-objref="37 0 R" title="data del documento" data-field-name="data del documento"/>
-<input id="form8_1" type="text" tabindex="9" value="" data-objref="38 0 R" title="utenza telefonica" data-field-name="utenza telefonica"/>
-<textarea id="form9_1" tabindex="4" data-objref="33 0 R" title="residente" data-field-name="residenza"></textarea>
-<input id="form10_1" type="text" tabindex="6" value="" data-objref="35 0 R" title="documento" data-field-name="documento"/>
-<input id="form11_1" type="text" tabindex="7" value="" data-objref="36 0 R" title="numero di documento" data-field-name="numero di documento"/>
-<textarea id="form12_1" tabindex="5" data-objref="34 0 R" title="indirizzo domiciliale" data-field-name="indirizzo domiciliale"></textarea>
-<input id="form13_1" name="nomes" type="text" tabindex="1" value="" data-objref="30 0 R" title="nome e cognome" data-field-name="nome e cognome"/>
-<textarea id="form14_1" tabindex="15" data-objref="44 0 R" title="data, ora e luogo" data-field-name="data, ora e luogo"></textarea>
-<textarea id="form15_1" tabindex="14" data-objref="43 0 R" title="testo di dichiarazione" data-field-name="testo di dichiarazione"></textarea>
-
-</form>    
-
-</div>
+  <!-- <script type="text/javascript" src="assets/js/main-old.js"></script> -->
 
 </body>
-
-<script type="text/javascript">
-
-function CreatePDFfromHTML() {
-
-var nome = $('#nome').val();
-if (nome == "") {
-    alert("Inserire Nome e Cognome");
-    return false;
-  }
-var  nascita= $('#nascita').val();
-if (nascita == "") {
-    alert("Inserire data di nascita");
-    return false;
-  }
-var  comunenascita= $('#comunenascita').val();
-if (comunenascita == "") {
-    alert("Inserire il comune di nascita");
-    return false;
-  }
-var  comuneresidenza= $('#comuneresidenza').val();
-if (comuneresidenza == "") {
-    alert("Inserire il comune di residenza");
-    return false;
-  }
-var  via= $('#via').val();
-if (via == "") {
-    alert("Inserire via e numero civico");
-    return false;
-  }
-var  doc= $('#doc').val();
-if (doc == "") {
-    alert("Scegliere un documento valido");
-    return false;
-  }
-var  numerodoc= $('#numerodoc').val();
-if (numerodoc == "") {
-    alert("Inserire numero documento");
-    return false;
-  }
-var  comunedatarilascio= $('#comunedatarilascio').val();
-if ( comunedatarilascio == "") {
-    alert("Inserire il comune e la data di rilascio");
-    return false;
-  }
-var  telefono= $('#telefono').val();
-if (telefono == "") {
-    alert("Inserire un recapito telefonico");
-    return false;
-  }
-var dichiarazione= $('#dichiarazione').val();
-if (dichiarazione == "") {
-    alert("Inserire testo dichiarazione");
-    return false;
-  }
-
-var motivo = document.querySelector('input[name="motivo"]:checked').value;
-
-
-document.getElementById("form13_1").value = nome;
-document.getElementById("form5_1").value = nascita;
-document.getElementById("form6_1").value = comunenascita;
-document.getElementById("form9_1").value = comuneresidenza;
-document.getElementById("form12_1").value = via;
-document.getElementById("form10_1").value = doc;
-document.getElementById("form11_1").value = numerodoc;
-document.getElementById("form7_1").value = comunedatarilascio;
-document.getElementById("form8_1").value = telefono;
-
-console.log(motivo);
-if(motivo=='Scelta1'){
-document.getElementById("form4_1").checked = true;}
-else if (motivo=='Scelta2'){
-document.getElementById("form2_1").checked = true;}
-else if (motivo=='Scelta3'){
-document.getElementById("form1_1").checked = true;}
-else {
-document.getElementById("form3_1").checked = true;}
-
-document.getElementById("form15_1").value = dichiarazione;
-
-
-
-	$(".pageArea").show();
-    var HTML_Width = $(".pageArea").width();
-    var HTML_Height = $(".pageArea").height();
-    var top_left_margin = 15;
-    var PDF_Width = HTML_Width + (top_left_margin * 2);
-    var PDF_Height = (PDF_Width * 1.5) + (top_left_margin * 2);
-    var canvas_image_width = HTML_Width;
-    var canvas_image_height = HTML_Height;
-
-    var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
-
-    html2canvas($(".pageArea")[0]).then(function (canvas) {
-        var imgData = canvas.toDataURL("image/jpeg", 1.0);
-        var pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
-        pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
-        for (var i = 1; i <= totalPDFPages; i++) { 
-            pdf.addPage(PDF_Width, PDF_Height);
-            pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height*i)+(top_left_margin*4),canvas_image_width,canvas_image_height);
-        }
-        var image = $('#sig-dataUrl').val();
-        pdf.addImage(image, 'JPEG', 100, 1205, 250, 100);
-        pdf.save("modulo-autodichiarazione-17.3.2020.pdf");
-       
-        $(".pageArea").hide();
-    });
-
-
-
-
-
-
-
-
-}
-</script>
-
-<script type="text/javascript">
-	(function() {
-  window.requestAnimFrame = (function(callback) {
-    return window.requestAnimationFrame ||
-      window.webkitRequestAnimationFrame ||
-      window.mozRequestAnimationFrame ||
-      window.oRequestAnimationFrame ||
-      window.msRequestAnimaitonFrame ||
-      function(callback) {
-        window.setTimeout(callback, 1000 / 60);
-      };
-  })();
-
-  var canvas = document.getElementById("sig-canvas");
-  var ctx = canvas.getContext("2d");
-  ctx.strokeStyle = "#222222";
-  ctx.lineWidth = 4;
-
-  var drawing = false;
-  var mousePos = {
-    x: 0,
-    y: 0
-  };
-  var lastPos = mousePos;
-
-  canvas.addEventListener("mousedown", function(e) {
-    drawing = true;
-    lastPos = getMousePos(canvas, e);
-  }, false);
-
-  canvas.addEventListener("mouseup", function(e) {
-    drawing = false;
-  }, false);
-
-  canvas.addEventListener("mousemove", function(e) {
-    mousePos = getMousePos(canvas, e);
-  }, false);
-
-  // Add touch event support for mobile
-  canvas.addEventListener("touchstart", function(e) {
-
-  }, false);
-
-  canvas.addEventListener("touchmove", function(e) {
-    var touch = e.touches[0];
-    var me = new MouseEvent("mousemove", {
-      clientX: touch.clientX,
-      clientY: touch.clientY
-    });
-    canvas.dispatchEvent(me);
-  }, false);
-
-  canvas.addEventListener("touchstart", function(e) {
-    mousePos = getTouchPos(canvas, e);
-    var touch = e.touches[0];
-    var me = new MouseEvent("mousedown", {
-      clientX: touch.clientX,
-      clientY: touch.clientY
-    });
-    canvas.dispatchEvent(me);
-  }, false);
-
-  canvas.addEventListener("touchend", function(e) {
-    var me = new MouseEvent("mouseup", {});
-    canvas.dispatchEvent(me);
-  }, false);
-
-  function getMousePos(canvasDom, mouseEvent) {
-    var rect = canvasDom.getBoundingClientRect();
-    return {
-      x: mouseEvent.clientX - rect.left,
-      y: mouseEvent.clientY - rect.top
-    }
-  }
-
-  function getTouchPos(canvasDom, touchEvent) {
-    var rect = canvasDom.getBoundingClientRect();
-    return {
-      x: touchEvent.touches[0].clientX - rect.left,
-      y: touchEvent.touches[0].clientY - rect.top
-    }
-  }
-
-  function renderCanvas() {
-    if (drawing) {
-      ctx.moveTo(lastPos.x, lastPos.y);
-      ctx.lineTo(mousePos.x, mousePos.y);
-      ctx.stroke();
-      lastPos = mousePos;
-    }
-  }
-
-  // Prevent scrolling when touching the canvas
-  document.body.addEventListener("touchstart", function(e) {
-    if (e.target == canvas) {
-      e.preventDefault();
-    }
-  }, false);
-  document.body.addEventListener("touchend", function(e) {
-    if (e.target == canvas) {
-      e.preventDefault();
-    }
-  }, false);
-  document.body.addEventListener("touchmove", function(e) {
-    if (e.target == canvas) {
-      e.preventDefault();
-    }
-  }, false);
-
-  (function drawLoop() {
-    requestAnimFrame(drawLoop);
-    renderCanvas();
-  })();
-
-  function clearCanvas() {
-    canvas.width = canvas.width;
-  }
-
-  // Set up the UI
-  var sigText = document.getElementById("sig-dataUrl");
-  var sigImage = document.getElementById("sig-image");
-  var clearBtn = document.getElementById("sig-clearBtn");
-  var submitBtn = document.getElementById("sig-submitBtn");
-  clearBtn.addEventListener("click", function(e) {
-    clearCanvas();
-    sigText.innerHTML = "Data URL for your signature will go here!";
-    sigImage.setAttribute("src", "");
-  }, false);
-  submitBtn.addEventListener("click", function(e) {
-    var dataUrl = canvas.toDataURL();
-    sigText.innerHTML = dataUrl;
-    sigImage.setAttribute("src", dataUrl);
-  }, false);
-
-})();
-</script>
-
-<script>
-function myFunction() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
-</script>
 
 </html>
