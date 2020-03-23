@@ -29,6 +29,38 @@
     content="Con miautocertifico.it puoi generare l'autodichiarazione per i tuoi spostamenti e riceverla direttamente sull’e-mail. Potrai salvarla sullo smartphone o scaricarla e stamparla.">
   <meta property="twitter:image" content="https://www.miautocertifico.it/assets/images/og-image.jpg">
 
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MCTCZDT');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161062635-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-161062635-1');
+  </script>
+
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     crossorigin="anonymous">
@@ -43,6 +75,11 @@
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MCTCZDT" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top py-1">
@@ -83,10 +120,12 @@
         <form style="padding-top: 60px;">
           <div class="form-row">
             <div class="form-group col-md-4">
-              <label class="pt-1"><b>Nome</b></label> <input required name="name" type="text" class="form-control border border-dark">
+              <label class="pt-1"><b>Nome</b></label> <input required name="name" type="text"
+                class="form-control border border-dark">
             </div>
             <div class="form-group col-md-5">
-              <label class="pt-1"><b>Cognome</b></label> <input required name="surname" type="text" class="form-control border border-dark">
+              <label class="pt-1"><b>Cognome</b></label> <input required name="surname" type="text"
+                class="form-control border border-dark">
             </div>
             <div class="form-group col-md-3">
               <label class="pt-1"><b>Nato il</b></label> <input type="date" required name="born"
@@ -96,12 +135,12 @@
 
           <div class="form-row">
             <div class="form-group col-md-4">
-              <label class="pt-1"><b>A</b></label> <input type="text" name="born-town" class="form-control border border-dark"
-                placeholder="Comune di nascita">
+              <label class="pt-1"><b>A</b></label> <input type="text" name="born-town"
+                class="form-control border border-dark" placeholder="Comune di nascita">
             </div>
             <div class="form-group col-md-4">
-              <label class="pt-1"><b>Residente in</b></label> <input type="text" name="current-town" class="form-control border border-dark"
-                placeholder="Comune di residenza">
+              <label class="pt-1"><b>Residente in</b></label> <input type="text" name="current-town"
+                class="form-control border border-dark" placeholder="Comune di residenza">
             </div>
             <div class="form-group col-md-4">
               <label class="pt-1"><b>Via e n° civico</b></label> <input type="text" name="current-address"
@@ -119,15 +158,16 @@
                 class="form-control border border-dark">
             </div>
             <div class="form-group col-md-3">
-              <label class="pt-1"><b>In data</b></label> <input type="date" name="release-data" class="form-control border border-dark">
+              <label class="pt-1"><b>In data</b></label> <input type="date" name="release-data"
+                class="form-control border border-dark">
             </div>
 
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label class="pt-1"><b>Nr.</b></label> <input type="text" name="document-number" class="form-control border border-dark"
-                placeholder="Numero di documento">
+              <label class="pt-1"><b>Nr.</b></label> <input type="text" name="document-number"
+                class="form-control border border-dark" placeholder="Numero di documento">
             </div>
             <div class="form-group col-md-6">
               <label class="pt-1"><b>Utenza telefonica</b></label> <input type="text" name="telephone-number"
@@ -245,7 +285,7 @@ etc....)"></textarea>
     </div>
 
     <br><br>
-    <div class="row" >
+    <div class="row">
       <div class="col-sm text-center">
         <h2 pb-3 id="faq"><b>Domande frequenti</b></h2>
         <hr class="blue-line">
@@ -395,11 +435,12 @@ etc....)"></textarea>
   <br><br><br><br><br>
 
   <footer class="footer">
-    <div class="container">
+    <div class="container text-center">
       <span>Copyright &copy;
         <script>
           document.write(new Date().getFullYear());
-        </script> di www.miautocertifico.it - realizzato da Fabrizio Cotugno e Gianmarco Giordani</span>
+        </script> di www.miautocertifico.it - realizzato in Italia 🇮🇹 ❤️<br>Fabrizio Cotugno, Gianmarco Giordani e
+        Alessandro Maggio</span>
     </div>
   </footer>
 

@@ -1,4 +1,3 @@
-
 var wrapper = document.getElementById("signature-pad");
 var clearButton = wrapper.querySelector("[data-action=clear]");
 var undoButton = wrapper.querySelector("[data-action=undo]");
