@@ -19,7 +19,7 @@
   <meta property="og:title" content="Crea l'autodichiarazione per i tuoi spostamenti in pochi clic.">
   <meta property="og:description"
     content="Con miautocertifico.it puoi generare l'autodichiarazione per i tuoi spostamenti e riceverla direttamente sull’e-mail. Potrai salvarla sullo smartphone o scaricarla e stamparla.">
-  <meta property="og:image" content="https://www.miautocertifico.it//assets/images/og-image.jpg">
+  <meta property="og:image" content="https://www.miautocertifico.it/assets/images/og-image.jpg">
 
   <!-- Open Graph / Twitter -->
   <meta property="twitter:card" content="summary_large_image">
@@ -27,12 +27,11 @@
   <meta property="twitter:title" content="Crea l'autodichiarazione per i tuoi spostamenti in pochi clic.">
   <meta property="twitter:description"
     content="Con miautocertifico.it puoi generare l'autodichiarazione per i tuoi spostamenti e riceverla direttamente sull’e-mail. Potrai salvarla sullo smartphone o scaricarla e stamparla.">
-  <meta property="twitter:image" content="https://www.miautocertifico.it//assets/images/og-image.jpg">
+  <meta property="twitter:image" content="https://www.miautocertifico.it/assets/images/og-image.jpg">
 
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/8dbc159068.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
 
   <!-- Custom styles for this template -->
@@ -44,8 +43,8 @@
 <body>
   <header>
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark py-1">
-      <a class="navbar-brand" href="#"><img src="assets/images/logo.svg" width="250px;"></a>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top py-1">
+      <a class="navbar-brand" href="#"><img  class="img-fluid" src="assets/images/logo.svg" width="275px;" alt="miautocertifico.it"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -66,119 +65,188 @@
     </nav>
   </header>
 
-  <div class="container">
+  <main role="main" class="container">
     <div class="row">
       <div class="col-sm text-center">
-        <h1><b>La tua autodichiarazione da stampare in pochi semplici e facili clic.</b></h1> 
-        <h5 class="pt-5">Con miautocertifico.it puoi generare la tua dichiarazione e riceverla direttamente sull’e-mail. Potrai salvarla sullo smartphone o scaricarla e stamparla.</h5>
+        <h1><b>La tua autodichiarazione da stampare in pochi semplici e facili clic.</b></h1>
+        <h5 class="pt-5">Con miautocertifico.it puoi generare la tua dichiarazione e riceverla direttamente sull’e-mail.
+          Potrai salvarla sullo smartphone o scaricarla e stamparla.</h5>
       </div>
     </div>
+
     <div class="row">
       <div class="col-sm">
 
-  <form style="padding-top: 120px;">
-    <div class="form-row pt-1">
-      <div class="form-group col-md-4">
-        <label><b>Nome</b></label> <input type="text" class="form-control border border-dark" >
-      </div>
-      <div class="form-group col-md-5">
-        <label><b>Cognome</b></label> <input type="text" class="form-control border border-dark" >
-      </div>
-      <div class="form-group col-md-3">
-          <label><b>Nato il</b></label> <input type="date" type="password" class="form-control border border-dark" >
-      </div>
-    </div>
+        <form style="padding-top: 60px;">
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label class="pt-1"><b>Nome</b></label> <input type="text" class="form-control border border-dark">
+            </div>
+            <div class="form-group col-md-5">
+              <label class="pt-1"><b>Cognome</b></label> <input type="text" class="form-control border border-dark">
+            </div>
+            <div class="form-group col-md-3">
+              <label class="pt-1"><b>Nato il</b></label> <input type="date" type="password" class="form-control border border-dark">
+            </div>
+          </div>
 
-      <div class="form-row pt-1">
-        <div class="form-group col-md-4">
-          <label><b>A</b></label> <input type="text" class="form-control border border-dark" placeholder="Comune di nascita">
-        </div>
-        <div class="form-group col-md-4">
-          <label><b>Residente in</b></label> <input type="text" class="form-control border border-dark" placeholder="Comune di residenza">
-        </div>
-        <div class="form-group col-md-4">
-          <label><b>Via e n° civico</b></label> <input type="text" class="form-control border border-dark"
-            placeholder="Comune di nascita">
-        </div>
-      </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label class="pt-1"><b>A</b></label> <input type="text" class="form-control border border-dark"
+                placeholder="Comune di nascita">
+            </div>
+            <div class="form-group col-md-4">
+              <label class="pt-1"><b>Residente in</b></label> <input type="text" class="form-control border border-dark"
+                placeholder="Comune di residenza">
+            </div>
+            <div class="form-group col-md-4">
+              <label class="pt-1"><b>Via e n° civico</b></label> <input type="text" class="form-control border border-dark"
+                placeholder="Comune di nascita">
+            </div>
+          </div>
 
-       <div class="form-row pt-1">
-         <div class="form-group col-md-4">
-           <label><b>Identificato a mezzo</b></label> <input type="text" class="form-control border border-dark"
-             placeholder="Documento di identificazione">
-         </div>
-         <div class="form-group col-md-5">
-           <label><b>Rilasciato da</b></label> <input type="text" class="form-control border border-dark">
-         </div>
-         <div class="form-group col-md-3">
-           <label><b>In data</b></label> <input type="date" class="form-control border border-dark">
-         </div>
-         
-       </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label class="pt-1"><b>Identificato a mezzo</b></label> <input type="text" class="form-control border border-dark"
+                placeholder="Documento di identificazione">
+            </div>
+            <div class="form-group col-md-5">
+              <label class="pt-1"><b>Rilasciato da</b></label> <input type="text" class="form-control border border-dark">
+            </div>
+            <div class="form-group col-md-3">
+              <label class="pt-1"><b>In data</b></label> <input type="date" class="form-control border border-dark">
+            </div>
 
-       <div class="form-row pt-1">
-         <div class="form-group col-md-6">
-           <label><b>Nr.</b></label> <input type="text" class="form-control border border-dark"
-             placeholder="Numero di documento">
-         </div>
-         <div class="form-group col-md-6">
-           <label><b>Utenza telefonica</b></label> <input type="text" class="form-control border border-dark"
-             placeholder="Numero di telefono">
-         </div>
-       </div>
+          </div>
 
-       <div class="form-row pt-1">
-         <div class="form-group col-md-6">
-           <label><b>Spostamento iniziato da</b></label> <input type="text" class="form-control border border-dark">
-         </div>
-         <div class="form-group col-md-6">
-           <label><b>Destinazione</b></label> <input type="text" class="form-control border border-dark">
-         </div>
-       </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label class="pt-1"><b>Nr.</b></label> <input type="text" class="form-control border border-dark"
+                placeholder="Numero di documento">
+            </div>
+            <div class="form-group col-md-6">
+              <label class="pt-1"><b>Utenza telefonica</b></label> <input type="text" class="form-control border border-dark"
+                placeholder="Numero di telefono">
+            </div>
+          </div>
 
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label class="pt-1"><b>Spostamento iniziato da</b></label> <input type="text" class="form-control border border-dark">
+            </div>
+            <div class="form-group col-md-6">
+              <label class="pt-1"><b>Destinazione</b></label> <input type="text" class="form-control border border-dark">
+            </div>
+          </div>
 
-        <div class="form-row pt-1">
-          <div class="form-group col-md-12">
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="reason" value="option1" checked>
-  <label class="form-check-label">comprovate esigenze lavorative;</label></div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="reason" value="option2" checked>
-  <label class="form-check-label">assoluta urgenza (“per trasferimenti in comune diverso”, come previsto dall’art. 1,
-    comma 1, lettera b) del Decreto del Presidente del Consiglio dei Ministri 22 marzo 2020);</label></div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="reason" value="option3" checked>
-  <label class="form-check-label">situazione di necessità (per spostamenti all’interno dello stesso comune, come
-    previsto dall’art. 1, comma 1, lett. a) del Decreto del Presidente del Consiglio dei Ministri 8 marzo 2020 e art. 1
-    del Decreto del Presidente del Consiglio dei Ministri 9 marzo 2020);</label></div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="reason" value="option4" checked>
-  <label class="form-check-label">motivi di salute.</label></div>
-          </div></div>
- <div class="form-row pt-1">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="reason" value="option1" checked>
+                <label class="form-check-label">comprovate esigenze lavorative;</label></div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="reason" value="option2" checked>
+                <label class="form-check-label">assoluta urgenza (“per trasferimenti in comune diverso”, come previsto
+                  dall’art. 1,
+                  comma 1, lettera b) del Decreto del Presidente del Consiglio dei Ministri 22 marzo 2020);</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="reason" value="option3" checked>
+                <label class="form-check-label">situazione di necessità (per spostamenti all’interno dello stesso
+                  comune, come
+                  previsto dall’art. 1, comma 1, lett. a) del Decreto del Presidente del Consiglio dei Ministri 8 marzo
+                  2020 e art. 1
+                  del Decreto del Presidente del Consiglio dei Ministri 9 marzo 2020);</label></div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="reason" value="option4" checked>
+                <label class="form-check-label">motivi di salute.</label></div>
+            </div>
+          </div>
 
-           <div class="form-group col-md-12">
-             <label >A questo riguardo, dichiara che</label>
-             <textarea class="form-control border border-dark" rows="3" placeholder="(lavoro presso ..., devo effettuare una visita medica, rientro dall’estero, altri motivi particolari,
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label class="pt-1"><b>A questo riguardo, dichiara che</b></label>
+              <textarea class="form-control border border-dark" rows="3" placeholder="(lavoro presso ..., devo effettuare una visita medica, rientro dall’estero, altri motivi particolari,
 etc....)"></textarea>
-           </div></div>
- </div>
- </div>
-    <button type="submit" class="btn btn-primary">Sign in</button>
-  </form>
+            </div>
+          </div>
 
+          <div class="form-row">
+            <div class="form-group col-md-12 text-center">
+              <label class="pt-1"><b>Firma del richiedente</b></label>
+              <div id="signature-pad" class="signature-pad">
+                <div class="signature-pad--body">
+                  <canvas class="canvas-pad"></canvas>
+                </div>
+                <div class="signature-pad--footer">
+                  <div class="signature-pad--actions">
+                    <div>
+                      <button type="button" class="btn btn-sm btn-primary blu-button-bold-upper" data-action="clear"><i class="fas fa-trash-alt"></i> Cancella</button>
+                      <button type="button" class="btn btn-sm btn-primary blu-button-bold-upper" data-action="undo"><i class="fas fa-undo"></i> Torna indietro</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row pt-3 mt-3 pb-3">
+            <div class="form-group col-md-6 mx-auto text-left">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              <b>www.miautocertifico.it</b> è un servizio totalmente gratuito senza
+              alcuno scopo di lucro a disposizione degli utenti per poter generare
+              la propria autocertifcazione scaricandola direttamente sul proprio
+              smartphone o salvandola per poi stamparla.
+            </label>
+          </div>
+            </div>
+          </div>
+
+          <div class="form-row pt-3 pb-3">
+            <div class="col-md-4 mx-auto text-center">
+              <p><b>DOVE VUOI RICERVELA?</b></p>
+              <button class="btn btn-lg btn-primary blu-button-bold-upper" style="font-size: 45px; width: 100px; height: 100px;"><i class="fas fa-download"></i></button>
+              <button class="btn btn-lg btn-primary blu-button-bold-upper" style="font-size: 45px; width: 100px; height: 100px;"><i class="fas fa-envelope-open-text"></i></button>
+            </div>
+          </div>
+
+          <div class="form-row pt-3 pb-3">
+            <div class="col-md-6 mx-auto text-center">
+                  <button type="submit" class="btn btn-lg  btn-block btn-primary blu-button-bold-upper">GENERA LA TUA AUTOCERTIFICAZIONE</button>
+              </div>
+          </div>
+        </form>
       </div>
     </div>
-  </div>
 
+    <div class="row ">
+      <div class="col-sm ">
+        <p class="pt-3 pb-3 text-justify">
+          <b>www.miautocertifico.it</b> è un servizio totalmente gratuito senza alcuno scopo di lucro a disposizione degli utenti per poter generare la propria autocertifcazione scaricandola direttamente sul proprio smartphone o salvandola per poi stamparla.
+        </p>
+      </div>
+    </div>
 
+    <br>
+    <div class="row">
+      <div class="col-sm text-center">
+          <h2><b>Domande frequenti</b></h2>
+          <hr class="blue-line">
+        </p>
+      </div>
+    </div>
 
   </main>
 
+  <br><br><br><br><br>
+
   <footer class="footer">
-    <div class="container text-center">
-      <span class="text-muted">Copyright © di www.miautocertifico.it - realizzato da Fabrizio Cotugno e Gianmarco
-        Giordani</span>
+    <div class="container">
+      <span>Copyright &copy;
+      <script>document.write(new Date().getFullYear());</script> di www.miautocertifico.it - realizzato da Fabrizio Cotugno e Gianmarco Giordani</span>
     </div>
   </footer>
 
@@ -191,10 +259,8 @@ etc....)"></textarea>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous">
   </script>
 
-  <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-
-  <!-- <script type="text/javascript" src="assets/js/main-old.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+  <script type="text/javascript" src="assets/js/main.js"></script>
 
 </body>
 

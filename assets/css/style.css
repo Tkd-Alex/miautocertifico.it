@@ -1,3 +1,43 @@
 body {
     font-family: 'Open Sans', serif;
 }
+
+.navbar{
+    background-color: #009fe3;
+}
+
+.blu-button-bold-upper{
+    background-color: #009fe3;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.nav-item{
+    font-family: 'Open Sans', serif;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+canvas {
+    width: 70%;
+    height: 200px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+.blue-line {
+    border-top: 2px solid #009fe3;
+}
+
+/* Schermi grandi o ad alta risoluzione */
+@media all and (max-width: 1690px) { canvas { width: 50%; } }
+/* Schermi Desktop o Portatili */
+@media all and (min-width: 1280px) and (max-width: 1689px) { canvas { width: 70%; } }
+/* Tablet in modalità orizzontale */
+@media all and (min-width: 737px) and (max-width: 1279px) { canvas { width: 70%; } }
+/* Tablet in modalità verticale */
+@media all and (min-width: 481px) and (max-width: 736px) { canvas { width: 100%; } }
+/* Smartphone o piccoli Tablet */
+@media all and (max-width: 480px) { canvas { width: 100%; } }
