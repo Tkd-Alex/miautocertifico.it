@@ -30,9 +30,11 @@
   <meta property="twitter:image" content="https://www.miautocertifico.it/assets/images/og-image.jpg">
 
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/8dbc159068.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="assets/css/sticky-footer-navbar.css" rel="stylesheet">
@@ -44,7 +46,8 @@
   <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top py-1">
-      <a class="navbar-brand" href="#"><img  class="img-fluid" src="assets/images/logo.svg" width="275px;" alt="miautocertifico.it"></a>
+      <a class="navbar-brand" href="#"><img class="img-fluid" src="assets/images/logo.svg" width="275px;"
+          alt="miautocertifico.it"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -52,13 +55,13 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Autocertificazione <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#top">Autocertificazione</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Domande Frequenti</a>
+            <a class="nav-link" href="#faq">Domande Frequenti</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Privacy</a>
+            <a class="nav-link" href="#privacy">Privacy</a>
           </li>
         </ul>
       </div>
@@ -68,7 +71,7 @@
   <main role="main" class="container">
     <div class="row">
       <div class="col-sm text-center">
-        <h1><b>La tua autodichiarazione da stampare in pochi semplici e facili clic.</b></h1>
+        <h1 id="top"><b>La tua autodichiarazione da stampare in pochi semplici e facili clic.</b></h1>
         <h5 class="pt-5">Con miautocertifico.it puoi generare la tua dichiarazione e riceverla direttamente sull’e-mail.
           Potrai salvarla sullo smartphone o scaricarla e stamparla.</h5>
       </div>
@@ -80,62 +83,66 @@
         <form style="padding-top: 60px;">
           <div class="form-row">
             <div class="form-group col-md-4">
-              <label class="pt-1"><b>Nome</b></label> <input type="text" class="form-control border border-dark">
+              <label class="pt-1"><b>Nome</b></label> <input required name="name" type="text" class="form-control border border-dark">
             </div>
             <div class="form-group col-md-5">
-              <label class="pt-1"><b>Cognome</b></label> <input type="text" class="form-control border border-dark">
+              <label class="pt-1"><b>Cognome</b></label> <input required name="surname" type="text" class="form-control border border-dark">
             </div>
             <div class="form-group col-md-3">
-              <label class="pt-1"><b>Nato il</b></label> <input type="date" type="password" class="form-control border border-dark">
+              <label class="pt-1"><b>Nato il</b></label> <input type="date" required name="born"
+                class="form-control border border-dark">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-4">
-              <label class="pt-1"><b>A</b></label> <input type="text" class="form-control border border-dark"
+              <label class="pt-1"><b>A</b></label> <input type="text" name="born-town" class="form-control border border-dark"
                 placeholder="Comune di nascita">
             </div>
             <div class="form-group col-md-4">
-              <label class="pt-1"><b>Residente in</b></label> <input type="text" class="form-control border border-dark"
+              <label class="pt-1"><b>Residente in</b></label> <input type="text" name="current-town" class="form-control border border-dark"
                 placeholder="Comune di residenza">
             </div>
             <div class="form-group col-md-4">
-              <label class="pt-1"><b>Via e n° civico</b></label> <input type="text" class="form-control border border-dark"
-                placeholder="Comune di nascita">
+              <label class="pt-1"><b>Via e n° civico</b></label> <input type="text" name="current-address"
+                class="form-control border border-dark" placeholder="Comune di nascita">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-4">
-              <label class="pt-1"><b>Identificato a mezzo</b></label> <input type="text" class="form-control border border-dark"
-                placeholder="Documento di identificazione">
+              <label class="pt-1"><b>Identificato a mezzo</b></label> <input type="text" name="identified-on"
+                class="form-control border border-dark" placeholder="Documento di identificazione">
             </div>
             <div class="form-group col-md-5">
-              <label class="pt-1"><b>Rilasciato da</b></label> <input type="text" class="form-control border border-dark">
+              <label class="pt-1"><b>Rilasciato da</b></label> <input type="text" name="released-by"
+                class="form-control border border-dark">
             </div>
             <div class="form-group col-md-3">
-              <label class="pt-1"><b>In data</b></label> <input type="date" class="form-control border border-dark">
+              <label class="pt-1"><b>In data</b></label> <input type="date" name="release-data" class="form-control border border-dark">
             </div>
 
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label class="pt-1"><b>Nr.</b></label> <input type="text" class="form-control border border-dark"
+              <label class="pt-1"><b>Nr.</b></label> <input type="text" name="document-number" class="form-control border border-dark"
                 placeholder="Numero di documento">
             </div>
             <div class="form-group col-md-6">
-              <label class="pt-1"><b>Utenza telefonica</b></label> <input type="text" class="form-control border border-dark"
-                placeholder="Numero di telefono">
+              <label class="pt-1"><b>Utenza telefonica</b></label> <input type="text" name="telephone-number"
+                class="form-control border border-dark" placeholder="Numero di telefono">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label class="pt-1"><b>Spostamento iniziato da</b></label> <input type="text" class="form-control border border-dark">
+              <label class="pt-1"><b>Spostamento iniziato da</b></label> <input type="text" name="from"
+                class="form-control border border-dark">
             </div>
             <div class="form-group col-md-6">
-              <label class="pt-1"><b>Destinazione</b></label> <input type="text" class="form-control border border-dark">
+              <label class="pt-1"><b>Destinazione</b></label> <input type="text" name="destination"
+                class="form-control border border-dark">
             </div>
           </div>
 
@@ -166,7 +173,7 @@
           <div class="form-row">
             <div class="form-group col-md-12">
               <label class="pt-1"><b>A questo riguardo, dichiara che</b></label>
-              <textarea class="form-control border border-dark" rows="3" placeholder="(lavoro presso ..., devo effettuare una visita medica, rientro dall’estero, altri motivi particolari,
+              <textarea class="form-control border border-dark" name="text-box" rows="3" placeholder="(lavoro presso ..., devo effettuare una visita medica, rientro dall’estero, altri motivi particolari,
 etc....)"></textarea>
             </div>
           </div>
@@ -181,8 +188,10 @@ etc....)"></textarea>
                 <div class="signature-pad--footer">
                   <div class="signature-pad--actions">
                     <div>
-                      <button type="button" class="btn btn-sm btn-primary blu-button-bold-upper" data-action="clear"><i class="fas fa-trash-alt"></i> Cancella</button>
-                      <button type="button" class="btn btn-sm btn-primary blu-button-bold-upper" data-action="undo"><i class="fas fa-undo"></i> Torna indietro</button>
+                      <button type="button" class="btn btn-sm btn-primary blu-button-bold-upper" data-action="clear"><i
+                          class="fas fa-trash-alt"></i> Cancella</button>
+                      <button type="button" class="btn btn-sm btn-primary blu-button-bold-upper" data-action="undo"><i
+                          class="fas fa-undo"></i> Torna indietro</button>
                     </div>
 
                   </div>
@@ -193,30 +202,33 @@ etc....)"></textarea>
 
           <div class="form-row pt-3 mt-3 pb-3">
             <div class="form-group col-md-6 mx-auto text-left">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="">
-            <label class="form-check-label">
-              <b>www.miautocertifico.it</b> è un servizio totalmente gratuito senza
-              alcuno scopo di lucro a disposizione degli utenti per poter generare
-              la propria autocertifcazione scaricandola direttamente sul proprio
-              smartphone o salvandola per poi stamparla.
-            </label>
-          </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" required name="my-checkbox">
+                <label class="form-check-label">
+                  <b>www.miautocertifico.it</b> è un servizio totalmente gratuito senza
+                  alcuno scopo di lucro a disposizione degli utenti per poter generare
+                  la propria autocertifcazione scaricandola direttamente sul proprio
+                  smartphone o salvandola per poi stamparla.
+                </label>
+              </div>
             </div>
           </div>
 
           <div class="form-row pt-3 pb-3">
             <div class="col-md-4 mx-auto text-center">
               <p><b>DOVE VUOI RICERVELA?</b></p>
-              <button class="btn btn-lg btn-primary blu-button-bold-upper" style="font-size: 45px; width: 100px; height: 100px;"><i class="fas fa-download"></i></button>
-              <button class="btn btn-lg btn-primary blu-button-bold-upper" style="font-size: 45px; width: 100px; height: 100px;"><i class="fas fa-envelope-open-text"></i></button>
+              <button class="btn btn-lg btn-primary blu-button-bold-upper"
+                style="font-size: 45px; width: 100px; height: 100px;"><i class="fas fa-download"></i></button>
+              <button class="btn btn-lg btn-primary blu-button-bold-upper"
+                style="font-size: 45px; width: 100px; height: 100px;"><i class="fas fa-envelope-open-text"></i></button>
             </div>
           </div>
 
           <div class="form-row pt-3 pb-3">
             <div class="col-md-6 mx-auto text-center">
-                  <button type="submit" class="btn btn-lg  btn-block btn-primary blu-button-bold-upper">GENERA LA TUA AUTOCERTIFICAZIONE</button>
-              </div>
+              <button type="submit" class="btn btn-lg  btn-block btn-primary blu-button-bold-upper">GENERA LA TUA
+                AUTOCERTIFICAZIONE</button>
+            </div>
           </div>
         </form>
       </div>
@@ -225,18 +237,157 @@ etc....)"></textarea>
     <div class="row ">
       <div class="col-sm ">
         <p class="pt-3 pb-3 text-justify">
-          <b>www.miautocertifico.it</b> è un servizio totalmente gratuito senza alcuno scopo di lucro a disposizione degli utenti per poter generare la propria autocertifcazione scaricandola direttamente sul proprio smartphone o salvandola per poi stamparla.
+          <b>www.miautocertifico.it</b> è un servizio totalmente gratuito senza alcuno scopo di lucro a disposizione
+          degli utenti per poter generare la propria autocertifcazione scaricandola direttamente sul proprio smartphone
+          o salvandola per poi stamparla.
         </p>
       </div>
     </div>
 
-    <br>
-    <div class="row">
+    <br><br>
+    <div class="row" >
       <div class="col-sm text-center">
-          <h2><b>Domande frequenti</b></h2>
-          <hr class="blue-line">
-        </p>
+        <h2 pb-3 id="faq"><b>Domande frequenti</b></h2>
+        <hr class="blue-line">
+        <br>
+        <div class="accordion panel-group">
+
+          <!-- PRIMO CAMPO -->
+          <div class="panel panel-default">
+            <div class="panel-heading waves-effect">
+              <a href="#" class="accordion-link active" aria-expanded="true">
+                <h4 class="panel-title">Perché devo compilare l’autodichiarazione per i miei spostamenti?</h4>
+                <i class="material-icons accordion-toggle-icon">arrow_downward</i>
+              </a>
+            </div>
+            <div class="content-collapse" aria-expanded="true">
+              <div class="panel-body">
+                <p>
+                  Ricordate che deve essere compilato in ogni sua parte e deve contenere dichiarazioni veritiere, perché
+                  quanto
+                  riportato sul modulo viene sottoposto alla verifica delle autorità. Unitamente al modulo è necessario
+                  portare
+                  con sé anche il proprio documento di identità i cui estremi sono riportati sulla dichiarazione.
+                </p>
+                <p>
+
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECONDO CAMPO -->
+          <div class="panel panel-default">
+            <div class="panel-heading waves-effect">
+
+              <a href="#" class="accordion-link">
+                <h4 class="panel-title">Posso mostrare l’autodichiarazione sul mio smartphone in formato digitale?</h4>
+                <i class="material-icons accordion-toggle-icon">arrow_downward</i>
+              </a>
+            </div>
+            <div class="content-collapse collapsed">
+              <div class="panel-body">
+                <p>
+                  No, per essere ritenuta valida l'autocertificazione deve essere firmata, per cui non è possibile
+                  mostrarla al
+                  cellulare. È bene ricordare anche che bisogna portare con sé il proprio documento di identità i cui
+                  estremi
+                  sono riportati sull’autocertificazione.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- TERZO CAMPO -->
+          <div class="panel panel-default">
+            <div class="panel-heading waves-effect">
+
+              <a href="#" class="accordion-link">
+                <h4 class="panel-title">Quali sono le conseguenze per chi dichiara il falso nell’autodichiarazione?</h4>
+                <i class="material-icons accordion-toggle-icon">arrow_downward</i>
+              </a>
+            </div>
+            <div class="content-collapse collapsed">
+              <div class="panel-body">
+                <p>
+                  Le forze di polizia possono verificare la veridicità della vostra dichiarazione, attenzione quindi a
+                  non
+                  dichiarare il falso. In questo caso, infatti, la sanzione per chi viola le limitazioni agli
+                  spostamenti
+                  indicati dal DPCM dell'8 marzo 2020 si va ad aggiungere a quella per falsa certificazione. Questo
+                  significa
+                  che c'è il rischio di rispondere penalmente per inosservanza del provvedimento dell'autorità e per
+                  reati
+                  dolosi contro la salute pubblica.
+                </p>
+                <p>
+
+                </p>
+                <p>
+
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- QUARTO CAMPO -->
+          <div class="panel panel-default">
+            <div class="panel-heading waves-effect">
+              <a href="#" class="accordion-link">
+                <h4 class="panel-title">Se ho necessità di spostarmi tutti i giorni, di frequente, devo compilare
+                  l’autocertificazione ogni volta?</h4>
+                <i class="material-icons accordion-toggle-icon">arrow_downward</i>
+              </a>
+            </div>
+            <div class="content-collapse collapsed">
+              <div class="panel-body">
+                <p>
+                  No, nel caso in cui lo spostamento sia ricorrente è possibile utilizzare un unico modulo e specificare
+                  che si
+                  tratta di una scadenza fissa. Bisogna quindi indicare una frase come "Ogni giorno mi reco presso la
+                  clinica
+                  ....... per cure mediche indifferibili", o anche "Mi reco ogni giorno presso ...... alle ore ......
+                  per
+                  assistenza a mio padre non autosufficiente". 
+                </p>
+                <p>
+
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- QUINTO CAMPO -->
+          <div class="panel panel-default">
+            <div class="panel-heading waves-effect">
+              <a href="#" class="accordion-link">
+                <h4 class="panel-title">Se ho necessità di spostarmi tutti i giorni, di frequente, devo compilare
+                  l’autocertificazione ogni volta?</h4>
+                <i class="material-icons accordion-toggle-icon">arrow_downward</i>
+              </a>
+            </div>
+            <div class="content-collapse collapsed">
+              <div class="panel-body">
+                <p>
+                  No, nel caso in cui lo spostamento sia ricorrente è possibile utilizzare un unico modulo e specificare
+                  che si
+                  tratta di una scadenza fissa. Bisogna quindi indicare una frase come "Ogni giorno mi reco presso la
+                  clinica
+                  ....... per cure mediche indifferibili", o anche "Mi reco ogni giorno presso ...... alle ore ......
+                  per
+                  assistenza a mio padre non autosufficiente". 
+                </p>
+                <p>
+
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
+      </p>
+    </div>
     </div>
 
   </main>
@@ -246,7 +397,9 @@ etc....)"></textarea>
   <footer class="footer">
     <div class="container">
       <span>Copyright &copy;
-      <script>document.write(new Date().getFullYear());</script> di www.miautocertifico.it - realizzato da Fabrizio Cotugno e Gianmarco Giordani</span>
+        <script>
+          document.write(new Date().getFullYear());
+        </script> di www.miautocertifico.it - realizzato da Fabrizio Cotugno e Gianmarco Giordani</span>
     </div>
   </footer>
 
@@ -258,6 +411,8 @@ etc....)"></textarea>
   </script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous">
   </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js'></script>
 
   <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
   <script type="text/javascript" src="assets/js/main.js"></script>

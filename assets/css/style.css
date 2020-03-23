@@ -28,7 +28,9 @@ canvas {
 }
 
 .blue-line {
+    padding-top: 20px;
     border-top: 2px solid #009fe3;
+    width: 80%;
 }
 
 /* Schermi grandi o ad alta risoluzione */
@@ -41,3 +43,76 @@ canvas {
 @media all and (min-width: 481px) and (max-width: 736px) { canvas { width: 100%; } }
 /* Smartphone o piccoli Tablet */
 @media all and (max-width: 480px) { canvas { width: 100%; } }
+
+p {
+  line-height: 24px;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+.panel {
+  opacity: 0.2;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+}
+.panel-body {
+  padding: 30px;
+}
+.accordion {
+  margin-bottom: 60px;
+}
+.accordion .collapsed,
+.toggle .collapsed {
+  display: none;
+}
+.panel-group .panel {
+  border: none;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+}
+.panel-group .panel + .panel {
+  margin-top: 10px;
+}
+.panel-group .panel-heading {
+  position: relative;
+  padding: 0;
+  border-radius: 0;
+  display: block;
+}
+.panel-group .panel-heading > a {
+  background: #eee;
+  display: block;
+  padding: 18px 15px;
+}
+.panel-group .panel-title {
+  color: #333;
+  font-size: 20px;
+}
+.panel-group a[aria-expanded='true'] {
+  background: #009fe3;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.panel-group a[aria-expanded='true'] .panel-title {
+  color: #fff;
+}
+.panel-group .accordion-toggle-icon {
+  font-size: 16px;
+  line-height: 50px;
+  position: absolute;
+  top: 0;
+  right: 12px;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  transition: -webkit-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
+  color: #333;
+}
+.panel-group [aria-expanded='true'] .accordion-toggle-icon {
+  color: #fff;
+  -webkit-transform: rotate(180deg) translateZ(0);
+          transform: rotate(180deg) translateZ(0);
+}
