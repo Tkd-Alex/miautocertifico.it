@@ -28,25 +28,26 @@
 		// $_POST["name"];
 
 		$args = array(
-			"fullname" => 70, 
-			"born" => 10, 
-			"born-town" => 65, 
-			"current-town" => 31, 
-			"current-address" => 41, 
+			"fullname" => 70,
+			"born" => 10,
+			"born-town" => 65,
+			"current-town" => 31,
+			"current-address" => 41,
 			"domicile" => 20,
 			"domicile-address" => 25,
-			"identified-on" => 30, 
-			"released-by" => 55, 
-			"release-data" => 10, 
-			"document-number" => 37, 
-			"telephone-number" => 25, 
-			"from" => 45, 
-			"destination" => 40, 
-			"reason" => 0, 
+			"identified-on" => 30,
+			"released-by" => 55,
+			"release-data" => 10,
+			"document-number" => 37,
+			"telephone-number" => 25,
+			"from" => 45,
+			"destination" => 40,
+			"reason" => 0,
 			"text-box" => 0
 		);
-		
+
 		$text = file_get_contents('template.html');
+		$text = $text = str_replace("{{today}}", date("d/m/Y"), $text);
 
 		foreach ($args as $key => $val) {
 			if(!isset($_POST[$key])) header('Location: http://www.miautocertifico.it/');
@@ -75,7 +76,7 @@
 		unlink($fname . ".png");
 
 		$dompdf->stream();
-		// $dompdf->stream("dompdf_out.pdf", array("Attachment" => false));
+		$dompdf->stream("AUTOCERTIFICAZIONE-".$_POST["fullname"]."-".date("dmY").".pdf", array("Attachment" => false));
 	}
 
 ?>
