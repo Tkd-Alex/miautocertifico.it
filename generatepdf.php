@@ -23,10 +23,6 @@
 	if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 		exit;
 	} else {
-		// $mpdf = new \Mpdf\Mpdf();
-		$mpdf = new \Mpdf\Mpdf(['tempDir' => __DIR__ . '/tempdir']);
-		// $_POST["name"];
-
 		$args = array(
 			"fullname" => 70,
 			"born" => 10,
