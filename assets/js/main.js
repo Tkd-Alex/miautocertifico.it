@@ -149,3 +149,22 @@ $(document).ready(function () {
     $('li.active').removeClass('active');
     $('a[href="' + location.pathname + '"]').closest('li').addClass('active');
 });
+
+var outputSelect = "download";
+
+function selectOutput(idButton) {
+    outputSelect = idButton;
+    if (idButton == "download") {
+        $("#download").removeClass("blu-button-bold-upper");
+        $("#download").addClass("blu-button-bold-upper-active");
+
+        $("#email").removeClass("blu-button-bold-upper-active");
+        $("#email").addClass("blu-button-bold-upper");
+    } else {
+        $("#email").removeClass("blu-button-bold-upper");
+        $("#email").addClass("blu-button-bold-upper-active");
+
+        $("#download").removeClass("blu-button-bold-upper-active");
+        $("#download").addClass("blu-button-bold-upper");
+    }
+}

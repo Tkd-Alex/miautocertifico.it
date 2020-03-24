@@ -286,9 +286,10 @@ _iub.csConfiguration = {"lang":"it","ccpaAcknowledgeOnDisplay":true,"siteId":183
           <div class="form-row pt-3 pb-3">
             <div class="col-md-4 mx-auto text-center">
               <p><b>DOVE VUOI RICEVERLA?</b></p>
-              <button class="btn btn-lg btn-primary blu-button-bold-upper"
+              <button id="download" onclick="selectOutput('download');"
+                class="btn btn-lg btn-primary blu-button-bold-upper-active"
                 style="font-size: 45px; width: 100px; height: 100px;"><i class="fas fa-download"></i></button>
-              <button class="btn btn-lg btn-primary blu-button-bold-upper"
+              <button id="email" onclick="selectOutput('email');" class="btn btn-lg btn-primary blu-button-bold-upper"
                 style="font-size: 45px; width: 100px; height: 100px;"><i class="fas fa-envelope-open-text"></i></button>
             </div>
           </div>

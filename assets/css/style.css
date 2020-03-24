@@ -19,6 +19,14 @@ body {
   padding-right: 2px;
 }
 
+.blu-button-bold-upper-active {
+  background-color: #0095fc;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
 .nav-item {
   font-family: 'Open Sans', serif;
   margin-left: 20px;
