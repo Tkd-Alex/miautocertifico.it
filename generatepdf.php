@@ -1,5 +1,15 @@
 <?php
 
+	function generateRandomString($length=10) {
+	    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	    $charactersLength = strlen($characters);
+	    $randomString = '';
+	    for ($i = 0; $i < $length; $i++) {
+	        $randomString .= $characters[rand(0, $charactersLength - 1)];
+	    }
+	    return $randomString;
+	}
+
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
@@ -10,9 +20,9 @@
 	$dompdf = new Dompdf();
 
 
-	// if ($_SERVER['REQUEST_METHOD'] != 'POST') {
-	// 	exit;
-	// } else {
+	if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+		exit;
+	} else {
 		// $mpdf = new \Mpdf\Mpdf();
 		$mpdf = new \Mpdf\Mpdf(['tempDir' => __DIR__ . '/tempdir']);
 		// $_POST["name"];
@@ -44,21 +54,28 @@
 				$date = date_create($_POST[$key]);
 				$_POST[$key] = date_format($date,"d/m/Y");
 			}
-			if($key == "reason"){
-				$text = str_replace($_POST[$key], $_POST[$key] . '" checked', $text);
-			}else{
+			if($key == "reason") $text = str_replace($_POST[$key], $_POST[$key] . '" checked', $text);
+			else{
 				$text = str_replace("{{" . $key . "}}" , "<u>" . $_POST[$key] . "</u>" . ( strlen($_POST[$key]) < $val ? str_repeat("_", $val - strlen($_POST[$key])) : "" ), $text);
 			}
 		}
+
+		$fname = generateRandomString(36);
+		$data_uri = $_POST["imageData"];
+		$decoded_image = base64_decode($data_uri);
+		file_put_contents($fname . ".png", $decoded_image);
+
+		$text = str_replace("{{urlimage}}", $fname . ".png", $text);
 
 		$dompdf->loadHtml($text);
 		$dompdf->setPaper('A4', 'portrait');
 		$dompdf->set_option('isHtml5ParserEnabled', true);
 		$dompdf->set_option('defaultFont', 'Courier');
 		$dompdf->render();
-		// $dompdf->stream();
-		$dompdf->stream("dompdf_out.pdf", array("Attachment" => false));
-	// }
+		unlink($fname . ".png");
 
+		$dompdf->stream();
+		// $dompdf->stream("dompdf_out.pdf", array("Attachment" => false));
+	}
 
 ?>

@@ -123,3 +123,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+$('#myform').submit(function (event) {
+    // event.preventDefault();
+    var dataUrl = signaturePad.toDataURL();
+    var imagen = dataUrl.replace(/^data:image\/(png|jpg);base64,/, "");
+    var input = $("<input>")
+        .attr("type", "hidden")
+        .attr("name", "imageData").val(imagen);
+    $('#myform').append(input);
+    return true;
+});
