@@ -2,13 +2,13 @@
 <html lang="it">
 
 <head>
-  
+
 <script type="text/javascript">
 var _iub = _iub || [];
 _iub.csConfiguration = {"lang":"it","ccpaAcknowledgeOnDisplay":true,"siteId":1831331,"countryDetection":true,"enableCcpa":true,"cookiePolicyId":22949603, "banner":{ "position":"float-bottom-center","rejectButtonColor":"#0073CE","rejectButtonCaptionColor":"white","textColor":"white","backgroundColor":"#12486d","acceptButtonDisplay":true,"customizeButtonDisplay":true,"acceptButtonColor":"#007bff","acceptButtonCaptionColor":"white","customizeButtonColor":"#a7a7a7","customizeButtonCaptionColor":"#ffffff" }};
 </script>
 <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
-  
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="shortcut icon" type="image/png" href="https://www.miautocertifico.it//assets/images/favicon.png">
@@ -83,13 +83,13 @@ _iub.csConfiguration = {"lang":"it","ccpaAcknowledgeOnDisplay":true,"siteId":183
 </head>
 
 <body>
-  
-  
+
+
 <!--Start Cookie Script-->
 <script type="text/javascript" charset="UTF-8" src="http://chs03.cookie-script.com/s/aa3115fbead3207f812a79b887ed6c6d.js"></script>
 <!--End Cookie Script-->
-  
-  
+
+
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MCTCZDT" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
@@ -132,48 +132,66 @@ _iub.csConfiguration = {"lang":"it","ccpaAcknowledgeOnDisplay":true,"siteId":183
     <div class="row">
       <div class="col-sm">
 
-        <form style="padding-top: 60px;">
+        <form style="padding-top: 60px;" action="http://localhost/generatepdf.php" method="POST">
           <div class="form-row">
-            <div class="form-group col-md-4">
-              <label class="pt-1"><b>Nome</b></label> <input required name="name" type="text"
+            <div class="form-group col-md-9">
+              <label class="pt-1"><b>Nome e Cognome</b></label> <input required name="fullname" type="text"
                 class="form-control border border-dark">
             </div>
+            <!--
             <div class="form-group col-md-5">
               <label class="pt-1"><b>Cognome</b></label> <input required name="surname" type="text"
                 class="form-control border border-dark">
             </div>
+            -->
             <div class="form-group col-md-3">
-              <label class="pt-1"><b>Nato il</b></label> <input type="date" required name="born"
+              <label class="pt-1"><b>Nato il</b></label> <input required type="date" name="born"
                 class="form-control border border-dark">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-4">
-              <label class="pt-1"><b>A</b></label> <input type="text" name="born-town"
+              <label class="pt-1"><b>A</b></label> <input required type="text" name="born-town"
                 class="form-control border border-dark" placeholder="Comune di nascita">
             </div>
             <div class="form-group col-md-4">
-              <label class="pt-1"><b>Residente in</b></label> <input type="text" name="current-town"
+              <label class="pt-1"><b>Residente in</b></label> <input required type="text" name="current-town"
                 class="form-control border border-dark" placeholder="Comune di residenza">
             </div>
             <div class="form-group col-md-4">
-              <label class="pt-1"><b>Via e n° civico</b></label> <input type="text" name="current-address"
+              <label class="pt-1"><b>Via e n° civico</b></label> <input required type="text" name="current-address"
                 class="form-control border border-dark" placeholder="Comune di nascita">
             </div>
           </div>
 
           <div class="form-row">
+            <div class="form-group col-md-6">
+              <label class="pt-1"><b>Domiciliato in</b></label> <input required type="text" name="domicile"
+                class="form-control border border-dark" >
+            </div>
+            <div class="form-group col-md-6">
+              <label class="pt-1"><b>Via e n° civico</b></label> <input required type="text" name="domicile-address"
+                class="form-control border border-dark" >
+            </div>
+          </div>
+
+          <div class="form-row">
             <div class="form-group col-md-4">
-              <label class="pt-1"><b>Identificato a mezzo</b></label> <input type="text" name="identified-on"
-                class="form-control border border-dark" placeholder="Documento di identificazione">
+              <label class="pt-1"><b>Identificato a mezzo</b></label>
+              <!--<input required type="text" name="identified-on" class="form-control border border-dark" placeholder="Documento di identificazione">-->
+              <select required class="form-control border border-dark" name="identified-on">
+                <option>CARTA D'IDENTITÀ</option>
+                <option>PASSAPORTO</option>
+                <option>PATENTE DI GUIDA</option>
+              </select>
             </div>
             <div class="form-group col-md-5">
-              <label class="pt-1"><b>Rilasciato da</b></label> <input type="text" name="released-by"
+              <label class="pt-1"><b>Rilasciato da</b></label> <input required type="text" name="released-by"
                 class="form-control border border-dark">
             </div>
             <div class="form-group col-md-3">
-              <label class="pt-1"><b>In data</b></label> <input type="date" name="release-data"
+              <label class="pt-1"><b>In data</b></label> <input required type="date" name="release-data"
                 class="form-control border border-dark">
             </div>
 
@@ -181,22 +199,22 @@ _iub.csConfiguration = {"lang":"it","ccpaAcknowledgeOnDisplay":true,"siteId":183
 
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label class="pt-1"><b>Nr.</b></label> <input type="text" name="document-number"
+              <label class="pt-1"><b>Nr.</b></label> <input required type="text" name="document-number"
                 class="form-control border border-dark" placeholder="Numero di documento">
             </div>
             <div class="form-group col-md-6">
-              <label class="pt-1"><b>Utenza telefonica</b></label> <input type="text" name="telephone-number"
+              <label class="pt-1"><b>Utenza telefonica</b></label> <input required type="text" name="telephone-number"
                 class="form-control border border-dark" placeholder="Numero di telefono">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label class="pt-1"><b>Spostamento iniziato da</b></label> <input type="text" name="from"
+              <label class="pt-1"><b>Spostamento iniziato da</b></label> <input required type="text" name="from"
                 class="form-control border border-dark"placeholder="Indicare l'indirizzo da cui è iniziato lo spostamento">
             </div>
             <div class="form-group col-md-6">
-              <label class="pt-1"><b>Destinazione</b></label> <input type="text" name="destination"
+              <label class="pt-1"><b>Destinazione</b></label> <input required type="text" name="destination"
                 class="form-control border border-dark">
             </div>
           </div>
@@ -204,23 +222,23 @@ _iub.csConfiguration = {"lang":"it","ccpaAcknowledgeOnDisplay":true,"siteId":183
           <div class="form-row">
             <div class="form-group col-md-12">
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="reason" value="option1" checked>
+                <input required class="form-check-input" type="radio" name="reason" value="option1" checked>
                 <label class="form-check-label">comprovate esigenze lavorative;</label></div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="reason" value="option2" checked>
+                <input required class="form-check-input" type="radio" name="reason" value="option2">
                 <label class="form-check-label">assoluta urgenza (“per trasferimenti in comune diverso”, come previsto
                   dall’art. 1,
                   comma 1, lettera b) del Decreto del Presidente del Consiglio dei Ministri 22 marzo 2020);</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="reason" value="option3" checked>
+                <input required class="form-check-input" type="radio" name="reason" value="option3">
                 <label class="form-check-label">situazione di necessità (per spostamenti all’interno dello stesso
                   comune, come
                   previsto dall’art. 1, comma 1, lett. a) del Decreto del Presidente del Consiglio dei Ministri 8 marzo
                   2020 e art. 1
                   del Decreto del Presidente del Consiglio dei Ministri 9 marzo 2020);</label></div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="reason" value="option4" checked>
+                <input required class="form-check-input" type="radio" name="reason" value="option4">
                 <label class="form-check-label">motivi di salute.</label></div>
             </div>
           </div>
@@ -257,7 +275,7 @@ _iub.csConfiguration = {"lang":"it","ccpaAcknowledgeOnDisplay":true,"siteId":183
           <div class="form-row pt-3 mt-3 pb-3">
             <div class="form-group col-md-6 mx-auto text-left">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" required name="my-checkbox">
+                <input required class="form-check-input" type="checkbox" value="" name="my-checkbox">
                 <label class="form-check-label">
                   <b>Acconsento al trattamento dei miei dati personali secondo quanto stabilito dal regolamento europeo per la protezione dei dati personali n. 679/2016, GDPR. Leggi la privacy policy di miautocertifico.it <a href="https://www.iubenda.com/privacy-policy/22949603" target="_blank">Cliccando qui</a></b>
                 </label>
@@ -285,7 +303,7 @@ _iub.csConfiguration = {"lang":"it","ccpaAcknowledgeOnDisplay":true,"siteId":183
     </div>
 
     <br><br>
-    
+
     <div class="row">
       <div class="col-sm text-center">
         <h2 pb-3 id="faq"><b>Domande frequenti</b></h2>
@@ -430,7 +448,7 @@ _iub.csConfiguration = {"lang":"it","ccpaAcknowledgeOnDisplay":true,"siteId":183
       </p>
     </div>
     </div>
-  
+
       <div class="row ">
       <div class="col-sm ">
         <p class="pt-3 pb-3 text-justify">
@@ -438,7 +456,7 @@ _iub.csConfiguration = {"lang":"it","ccpaAcknowledgeOnDisplay":true,"siteId":183
           degli utenti per poter generare la propria autodichiarazione, sempre aggiornata, in caso di spostamenti. Potrete scegliere
           se stamparla salvandola direttamente sul proprio dispositivo o riceverla in e-mail.<br>
           Questa piattaforma è stata sviluppata da Fabrizio Cotugno e Alessandro Maggio con l'unico scopo di facilitare la compilazione di essa
-          e salvarla in base alla propria preferenza. miautocertifico.it non raccoglie alcun dato appartenente a voi ma al momento della 
+          e salvarla in base alla propria preferenza. miautocertifico.it non raccoglie alcun dato appartenente a voi ma al momento della
           compilazione i dati verranno salvati sul vostro e unico dispositivo.
         </p>
       </div>
@@ -448,7 +466,7 @@ _iub.csConfiguration = {"lang":"it","ccpaAcknowledgeOnDisplay":true,"siteId":183
 
   <br><br><br><br><br>
 
-  <footer class="footer">   
+  <footer class="footer">
     <div class="container text-center">
       <span>Copyright &copy;
         <script>
