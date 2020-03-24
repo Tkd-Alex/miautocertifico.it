@@ -75,8 +75,8 @@
 		$dompdf->render();
 		unlink($fname . ".png");
 
-		$dompdf->stream();
-		$dompdf->stream("AUTOCERTIFICAZIONE-".$_POST["fullname"]."-".date("dmY").".pdf", array("Attachment" => false));
+		$dompdf->stream("AUTOCERTIFICAZIONE-".$_POST["fullname"]."-".date("dmY").".pdf");
+		// $dompdf->stream("AUTOCERTIFICAZIONE-".$_POST["fullname"]."-".date("dmY").".pdf", array("Attachment" => false));
 	}
 
 ?>
