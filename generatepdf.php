@@ -26,7 +26,7 @@
 		$args = array(
 			"fullname" => 70,
 			"born" => 10,
-			"born-town" => 65,
+			"born-town" => 60,
 			"current-town" => 31,
 			"current-address" => 41,
 			"domicile" => 20,
@@ -53,7 +53,8 @@
 			}
 			if($key == "reason") $text = str_replace($_POST[$key], $_POST[$key] . '" checked', $text);
 			else{
-				$text = str_replace("{{" . $key . "}}" , "<u>" . $_POST[$key] . "</u>" . ( strlen($_POST[$key]) < $val ? str_repeat("_", $val - strlen($_POST[$key])) : "" ), $text);
+				$text = str_replace("{{" . $key . "}}" , "<span class='myunderline'>" . $_POST[$key] . "</span>" . (
+					strlen($_POST[$key]) < $val ? str_repeat("_", $val - strlen($_POST[$key])) : "" ), $text);
 			}
 		}
 
