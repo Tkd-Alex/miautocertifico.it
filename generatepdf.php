@@ -43,7 +43,7 @@
 		);
 
 		$text = file_get_contents('template.html');
-		$text = $text = str_replace("{{today}}", date("d/m/Y"), $text);
+		$text = $text = str_replace("{{today}}", date("d/m/Y H:i:s"), $text);
 
 		foreach ($args as $key => $val) {
 			if(!isset($_POST[$key])) header('Location: http://www.miautocertifico.it/');
