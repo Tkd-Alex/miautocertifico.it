@@ -53,8 +53,7 @@
 			}
 			if($key == "reason") $text = str_replace($_POST[$key], $_POST[$key] . '" checked', $text);
 			else{
-				$text = str_replace("{{" . $key . "}}" , "<u>" . $_POST[$key] . "</u>" . ( strlen($_POST[$key]) < $val ?
-					str_repeat("&#8194;", $val - strlen($_POST[$key])) : "" ), $text);
+				$text = str_replace("{{" . $key . "}}" , "<u>" . $_POST[$key] . "</u>" . ( strlen($_POST[$key]) < $val ? str_repeat("_", $val - strlen($_POST[$key])) : "" ), $text);
 			}
 		}
 
