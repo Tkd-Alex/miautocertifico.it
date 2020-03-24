@@ -26,8 +26,18 @@ function resizeCanvas() {
 
 // On mobile devices it might make more sense to listen to orientation change,
 // rather than window resize events.
-window.onresize = resizeCanvas;
-resizeCanvas();
+// window.onresize = resizeCanvas;
+$(document).ready(function () {
+    resizeCanvas();
+});
+
+$('.canvas-pad').on('click touchstart', function () {
+    var form = document.getElementById("myform");
+    for (var i = 0; i < form.elements.length; i++) {
+        form.elements[i].blur();
+    }
+});
+
 
 clearButton.addEventListener("click", function (event) {
     signaturePad.clear();
@@ -133,4 +143,9 @@ $('#myform').submit(function (event) {
         .attr("name", "imageData").val(imagen);
     $('#myform').append(input);
     return true;
+});
+
+$(document).ready(function () {
+    $('li.active').removeClass('active');
+    $('a[href="' + location.pathname + '"]').closest('li').addClass('active');
 });
