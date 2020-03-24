@@ -3,7 +3,7 @@ body {
 }
 
 .navbar {
-  background-color: #009fe3;
+  background-color: #12486d;
   margin-right: 0px;
 }
 
@@ -12,7 +12,7 @@ body {
 }
 
 .blu-button-bold-upper {
-  background-color: #009fe3;
+  background-color: #12486d;
   font-weight: 900;
   text-transform: uppercase;
   padding-left: 2px;
@@ -34,8 +34,8 @@ canvas {
 
 .blue-line {
   padding-top: 20px;
-  border-top: 2px solid #009fe3;
-  width: 80%;
+  border-top: 2px solid #12486d;
+  width: 60%;
 }
 
 /* Schermi grandi o ad alta risoluzione */
@@ -133,7 +133,7 @@ a:focus {
 }
 
 .panel-group a[aria-expanded='true'] {
-  background: #009fe3;
+  background: #12486d;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
 }
