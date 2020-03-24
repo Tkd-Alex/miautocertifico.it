@@ -52,10 +52,7 @@
 				$_POST[$key] = date_format($date,"d/m/Y");
 			}
 			if($key == "reason") $text = str_replace($_POST[$key], $_POST[$key] . '" checked', $text);
-			else{
-				$text = str_replace("{{" . $key . "}}" , "<span class='myunderline'>" . $_POST[$key] . "</span>" . (
-					strlen($_POST[$key]) < $val ? str_repeat("_", $val - strlen($_POST[$key])) : "" ), $text);
-			}
+			else $text = str_replace("{{" . $key . "}}" , $_POST[$key] , $text);
 		}
 
 		$fname = generateRandomString(36);
