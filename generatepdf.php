@@ -10,17 +10,20 @@
 	    return $randomString;
 	}
 
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
+	// ini_set('display_errors', 1);
+	// ini_set('display_startup_errors', 1);
+	// error_reporting(E_ALL);
+
+	//Import PHPMailer classes into the global namespace
+	use PHPMailer\PHPMailer\PHPMailer;
+	use PHPMailer\PHPMailer\SMTP;
 
 	require 'vendor/autoload.php';
 	use Dompdf\Dompdf;
-	// instantiate and use the dompdf class
+
 	$dompdf = new Dompdf();
 
-
-	if ($_SERVER['REQUEST_METHOD'] != 'POST') header('Location: http://www.miautocertifico.it/');
+	if ($_SERVER['REQUEST_METHOD'] != 'POST') header('Location: https://www.miautocertifico.it/');
 	else {
 		$args = array(
 			"fullname" => 70,
@@ -70,8 +73,42 @@
 		$dompdf->render();
 		unlink($fname . ".png");
 
-		$dompdf->stream("AUTOCERTIFICAZIONE-".$_POST["fullname"]."-".date("dmY").".pdf");
-		// $dompdf->stream("AUTOCERTIFICAZIONE-".$_POST["fullname"]."-".date("dmY").".pdf", array("Attachment" => false));
+		$fname = "AUTOCERTIFICAZIONE-".$_POST["fullname"]."-".date("dmY");
+		if(isset($_POST['email'])){
+			$mail = new PHPMailer;
+			$mail->isSMTP();
+			// $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+			$mail->Host = 'smtp.gmail.com';
+			$mail->Port = 587;
+			$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+			$mail->SMTPAuth = true;
+
+			$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+			$dotenv->load();
+			$mail->Username = getenv('EMAIL');
+			$mail->Password = getenv('PASSWORD');
+
+			$mail->setFrom('info@miautocertifico.it', 'miautocertifico.it');
+			$mail->addReplyTo('info@miautocertifico.it', 'miautocertifico.it');
+
+			$mail->addAddress($_POST['email'], $_POST['fullname']);
+
+			$mail->Subject = $fname;
+
+			$html = file_get_contents('email.html');
+			$html = $html = str_replace("{{fullname}}", $_POST['fullname'], $html);
+			$mail->msgHTML($html);
+			$mail->AltBody = 'Grazie per aver usufruito del servizio gratuito di miautocertifico.it. Con questa email, Le confermiamo l’avvenuta ricezione della sua autodichiarazione che può trovare in allegato e che può facilmente stampare. L’autodichiarazione per lo spostamente presente sul nostro sito è quella in corso di validità monitorando gli aggiornamenti da parte del Governo Italiano.';
+
+			$pdfString = $dompdf->output();	
+			$mail->addStringAttachment($pdfString, $fname.".pdf");
+			// $mail->addAttachment('images/phpmailer_mini.png');
+
+			$mail->send();
+			header('Location: https://www.miautocertifico.it/');
+
+		} else $dompdf->stream($fname.".pdf");
+		// $dompdf->stream("$fname".pdf", array("Attachment" => false));
 	}
 
 ?>
