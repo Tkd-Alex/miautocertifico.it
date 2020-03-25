@@ -74,7 +74,8 @@
 		unlink($fname . ".png");
 
 		$fname = "AUTOCERTIFICAZIONE-".$_POST["fullname"]."-".date("dmY");
-		if(isset($_POST['email'])){
+		if(isset($_POST['email']) && $_POST['email'] != ""){
+if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) header('Location: http://www.miautocertifico.it/');
 			$mail = new PHPMailer;
 			$mail->isSMTP();
 			// $mail->SMTPDebug = SMTP::DEBUG_SERVER;

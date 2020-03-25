@@ -171,7 +171,7 @@ $('#myform').submit(function (event) {
     }
 
     $("#complete-p").show();
-    if (idButton == "download") $("#complete-p").find("span").text(" Attendi, il tuo download partirà a breve...");
+    if (outputSelect == "download") $("#complete-p").find("span").text(" Attendi, il tuo download partirà a breve...");
     else $("#complete-p").find("span").text(" Attendi, riceverai a breve una mail con la tua autocertificazione...");
 
     return true;
