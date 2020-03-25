@@ -29,6 +29,7 @@ function resizeCanvas() {
 // window.onresize = resizeCanvas;
 $(document).ready(function () {
     resizeCanvas();
+    $("#email-input").hide();
 });
 
 $('.canvas-pad').on('click touchstart', function () {
@@ -134,6 +135,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+$(function () {
+    $("input[name='born']").on('input', function (e) {
+        $(this).val($(this).val().replace(/[^0-9\/]/g, ''));
+        if ($(this).val().length == 10 && isValidDate($(this).val()) == false) $(this).val("");
+    });
+});
+
+$(function () {
+    $("input[name='release-data']").on('input', function (e) {
+        $(this).val($(this).val().replace(/[^0-9\/]/g, ''));
+        if ($(this).val().length == 10 && isValidDate($(this).val()) == false) $(this).val("");
+    });
+});
+
+$("#complete-p").hide();
 $('#myform').submit(function (event) {
     // event.preventDefault();
     var dataUrl = signaturePad.toDataURL();
@@ -142,6 +158,20 @@ $('#myform').submit(function (event) {
         .attr("type", "hidden")
         .attr("name", "imageData").val(imagen);
     $('#myform').append(input);
+
+    if (isValidDate($("input[name=born]").val()) == false) {
+        $("input[name=born]").val("");
+        return false;
+    }
+    if (isValidDate($("input[name=release-data]").val()) == false) {
+        $("input[name=release-data]").val("");
+        return false;
+    }
+
+    $("#complete-p").show();
+    if (idButton == "download") $("#complete-p").find("span").text("Attendi, il tuo download partirà a breve...");
+    else $("#complete-p").find("span").text("Attendi, riceverai a breve una mail con la tua autocertificazione...");
+
     return true;
 });
 
@@ -160,11 +190,23 @@ function selectOutput(idButton) {
 
         $("#email").removeClass("blu-button-bold-upper-active");
         $("#email").addClass("blu-button-bold-upper");
+
+        $("#email-input").hide();
+        $("#email-input").prop('required', false);
     } else {
         $("#email").removeClass("blu-button-bold-upper");
         $("#email").addClass("blu-button-bold-upper-active");
 
         $("#download").removeClass("blu-button-bold-upper-active");
         $("#download").addClass("blu-button-bold-upper");
+
+        $("#email-input").show();
+        $("#email-input").prop('required', true);
     }
+}
+
+function isValidDate(s) {
+    var bits = s.split('/');
+    var d = new Date(bits[1] + '/' + bits[0] + '/' + bits[2]);
+    return !!(d && (d.getMonth() + 1) == bits[1] && d.getDate() == Number(bits[0]));
 }

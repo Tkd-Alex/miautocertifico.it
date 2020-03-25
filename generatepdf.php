@@ -20,9 +20,8 @@
 	$dompdf = new Dompdf();
 
 
-	if ($_SERVER['REQUEST_METHOD'] != 'POST') {
-		exit;
-	} else {
+	if ($_SERVER['REQUEST_METHOD'] != 'POST') header('Location: http://www.miautocertifico.it/');
+	else {
 		$args = array(
 			"fullname" => 70,
 			"born" => 10,
@@ -47,10 +46,12 @@
 
 		foreach ($args as $key => $val) {
 			if(!isset($_POST[$key])) header('Location: http://www.miautocertifico.it/');
+			/*
 			if ($key == "born" || $key == "release-data" ){
 				$date = date_create($_POST[$key]);
 				$_POST[$key] = date_format($date,"d/m/Y");
 			}
+			*/
 			if($key == "reason") $text = str_replace($_POST[$key], $_POST[$key] . '" checked', $text);
 			else $text = str_replace("{{" . $key . "}}" , $_POST[$key] , $text);
 		}
