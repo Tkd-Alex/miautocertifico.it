@@ -150,6 +150,8 @@ $(function () {
 });
 
 $("#complete-p").hide();
+var outputSelect = "download";
+
 $('#myform').submit(function (event) {
     // event.preventDefault();
     var dataUrl = signaturePad.toDataURL();
@@ -169,8 +171,8 @@ $('#myform').submit(function (event) {
     }
 
     $("#complete-p").show();
-    if (idButton == "download") $("#complete-p").find("span").text("Attendi, il tuo download partirà a breve...");
-    else $("#complete-p").find("span").text("Attendi, riceverai a breve una mail con la tua autocertificazione...");
+    if (idButton == "download") $("#complete-p").find("span").text(" Attendi, il tuo download partirà a breve...");
+    else $("#complete-p").find("span").text(" Attendi, riceverai a breve una mail con la tua autocertificazione...");
 
     return true;
 });
@@ -179,8 +181,6 @@ $(document).ready(function () {
     $('li.active').removeClass('active');
     $('a[href="' + location.pathname + '"]').closest('li').addClass('active');
 });
-
-var outputSelect = "download";
 
 function selectOutput(idButton) {
     outputSelect = idButton;
