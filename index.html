@@ -97,9 +97,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="assets/css/sticky-footer-navbar.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <!-- <link rel="stylesheet" href="assets/css/style-old.css"> -->
 
 </head>
 
@@ -121,7 +119,7 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/index.html">Autocertificazione</a>
+            <a class="nav-link" href="#main">Autocertificazione</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#faq">Domande Frequenti</a>
@@ -137,7 +135,8 @@
   <main role="main" class="container">
     <div class="row">
       <div class="col-sm text-center">
-        <h1 id="top"><b>Genera ora il modulo di autodichiarazione per i tuoi spostamenti da salvare e stampare, in pochi
+        <h1 id="main"><b>Genera ora il modulo di autodichiarazione per i tuoi spostamenti da salvare e stampare, in
+            pochi
             semplici e facili clic.</b></h1>
         <h5 class="pt-5">Con <b>miautocertifico.it</b> puoi generare la tua autodichiarazione, sempre aggiornata, e
           riceverla direttamente sull’e-mail o<br>
@@ -294,10 +293,10 @@
           <div class="form-row pt-3 pb-3">
             <div class="col-md-4 mx-auto text-center">
               <p><b>Dove vuoi riceverla?</b></p>
-              <button id="download" onclick="selectOutput('download');"
+              <button type="button" id="download" onclick="selectOutput('download');"
                 class="btn btn-lg btn-primary blu-button-bold-upper-active"
                 style="font-size: 45px; width: 100px; height: 100px;"><i class="fas fa-download"></i></button>
-              <button id="email" onclick="selectOutput('email');" class="btn btn-lg btn-primary blu-button-bold-upper"
+              <button type="button" id="email" onclick="selectOutput('email');" class="btn btn-lg btn-primary blu-button-bold-upper"
                 style="font-size: 45px; width: 100px; height: 100px;"><i class="fas fa-envelope-open-text"></i></button>
             </div>
           </div>
