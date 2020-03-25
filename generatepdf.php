@@ -10,6 +10,28 @@
 	    return $randomString;
 	}
 
+	// https://stackoverflow.com/questions/39720230/php-antiflood-how-to-limit-2-requests-per-second
+	$time_interval = 1; #In seconds
+	$max_requests = 5;
+	$fast_request_check = ($_SESSION['last_session_request'] > time() - $time_interval);
+
+	if (!isset($_SESSION)) {
+		# This is fresh session, initialize session and its variables
+		session_start();
+		$_SESSION['last_session_request'] = time();
+		$_SESSION['request_cnt'] = 1;
+	} elseif ($fast_request_check && ($_SESSION['request_cnt'] < $max_requests)) {
+		# This is fast, consecutive request, but meets max requests limit
+		$_SESSION['request_cnt']++;
+	} elseif ($fast_request_check) {
+		# This is fast, consecutive request, and exceeds max requests limit - kill it
+		die();
+	} else {
+		# This request is not fast, so reset session variables
+		$_SESSION['last_session_request'] = time();
+		$_SESSION['request_cnt'] = 1;
+	}
+
 	// ini_set('display_errors', 1);
 	// ini_set('display_startup_errors', 1);
 	// error_reporting(E_ALL);
