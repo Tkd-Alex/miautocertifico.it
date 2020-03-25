@@ -5,3 +5,12 @@ RewriteRule ^ /%1 [L,R=301]
 
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ /$1.html [L]
+
+# Disable index view
+Options -Indexes
+
+# Hide a specific file
+<Files .env>
+    Order allow,deny
+    Deny from all
+</Files>
