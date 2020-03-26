@@ -6,6 +6,9 @@ RewriteRule ^ /%1 [L,R=301]
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ /$1.html [L]
 
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 # Disable index view
 Options -Indexes
 
