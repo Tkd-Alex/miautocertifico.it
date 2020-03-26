@@ -1,0 +1,3 @@
+user-agent: googlebot
+Disallow:
+Sitemap: https://www.miautocertifico.it/sitemap.xml
