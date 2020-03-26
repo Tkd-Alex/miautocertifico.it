@@ -1,5 +1,7 @@
 <?php
 
+	$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+
 	function generateRandomString($length=10) {
 	    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	    $charactersLength = strlen($characters);
@@ -8,6 +10,30 @@
 	        $randomString .= $characters[rand(0, $charactersLength - 1)];
 	    }
 	    return $randomString;
+	}
+
+	function post_captcha($user_response) {
+		$dotenv->load();
+
+		$fields_string = '';
+		$fields = array(
+			'secret' => getenv('CAPTCHA'),
+			'response' => $user_response
+		);
+		foreach($fields as $key=>$value)
+		$fields_string .= $key . '=' . $value . '&';
+		$fields_string = rtrim($fields_string, '&');
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, 'https://www.google.com/recaptcha/api/siteverify');
+		curl_setopt($ch, CURLOPT_POST, count($fields));
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
+
+		$result = curl_exec($ch);
+		curl_close($ch);
+
+		return json_decode($result, true);
 	}
 
 	// https://stackoverflow.com/questions/39720230/php-antiflood-how-to-limit-2-requests-per-second
@@ -47,6 +73,9 @@
 
 	if ($_SERVER['REQUEST_METHOD'] != 'POST') header('Location: https://www.miautocertifico.it/');
 	else {
+		$res = post_captcha($_POST['g-recaptcha-response']);
+		if (!$res['success']) header('Location: https://www.miautocertifico.it/');
+
 		$args = array(
 			"fullname" => 70,
 			"born" => 10,
@@ -97,7 +126,8 @@
 
 		$fname = "AUTOCERTIFICAZIONE-".$_POST["fullname"]."-".date("dmY");
 		if(isset($_POST['email']) && $_POST['email'] != ""){
-if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) header('Location: http://www.miautocertifico.it/');
+			if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) header('Location: http://www.miautocertifico.it/');
+
 			$mail = new PHPMailer;
 			$mail->isSMTP();
 			// $mail->SMTPDebug = SMTP::DEBUG_SERVER;
@@ -106,7 +136,6 @@ if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) header('Location: http:
 			$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 			$mail->SMTPAuth = true;
 
-			$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 			$dotenv->load();
 			$mail->Username = getenv('EMAIL');
 			$mail->Password = getenv('PASSWORD');
@@ -123,7 +152,7 @@ if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) header('Location: http:
 			$mail->msgHTML($html);
 			$mail->AltBody = 'Grazie per aver usufruito del servizio gratuito di miautocertifico.it. Con questa email, Le confermiamo l’avvenuta ricezione della sua autodichiarazione che può trovare in allegato e che può facilmente stampare. L’autodichiarazione per lo spostamente presente sul nostro sito è quella in corso di validità monitorando gli aggiornamenti da parte del Governo Italiano.';
 
-			$pdfString = $dompdf->output();	
+			$pdfString = $dompdf->output();
 			$mail->addStringAttachment($pdfString, $fname.".pdf");
 			// $mail->addAttachment('images/phpmailer_mini.png');
 
