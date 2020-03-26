@@ -178,7 +178,7 @@
           <div class="form-row">
             <div class="form-group col-md-9">
               <label class="pt-1"><b>Nome e Cognome</b></label> <input required name="fullname" type="text"
-                class="form-control border border-dark">
+                class="form-control border border-dark" minlength="5">
             </div>
             <!--
             <div class="form-group col-md-5">
@@ -195,25 +195,25 @@
           <div class="form-row">
             <div class="form-group col-md-4">
               <label class="pt-1"><b>A</b></label> <input required type="text" name="born-town"
-                class="form-control border border-dark" placeholder="Comune di nascita">
+                class="form-control border border-dark" minlength="3" placeholder="Comune di nascita">
             </div>
             <div class="form-group col-md-4">
               <label class="pt-1"><b>Residente in</b></label> <input required type="text" name="current-town"
-                class="form-control border border-dark" placeholder="Comune di residenza">
+                class="form-control border border-dark" minlength="3" placeholder="Comune di residenza">
             </div>
             <div class="form-group col-md-4">
               <label class="pt-1"><b>Via e n° civico</b></label> <input required type="text" name="current-address"
-                class="form-control border border-dark" placeholder="Comune di nascita">
+                class="form-control border border-dark" minlength="3" placeholder="Comune di nascita">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-6">
               <label class="pt-1"><b>Domiciliato in</b></label> <input required type="text" name="domicile"
-                class="form-control border border-dark" placeholder="Comune di domicilio">
+                class="form-control border border-dark" minlength="3" placeholder="Comune di domicilio">
             </div>
             <div class="form-group col-md-6">
-              <label class="pt-1"><b>Via e n° civico</b></label> <input required type="text" name="domicile-address"
+              <label class="pt-1"><b>Via e n° civico</b></label> <input minlength="3" required type="text" name="domicile-address"
                 class="form-control border border-dark">
             </div>
           </div>
@@ -229,7 +229,7 @@
               </select>
             </div>
             <div class="form-group col-md-5">
-              <label class="pt-1"><b>Rilasciato da</b></label> <input required type="text" name="released-by"
+              <label class="pt-1"><b>Rilasciato da</b></label> <input minlength="3" required type="text" name="released-by"
                 class="form-control border border-dark">
             </div>
             <div class="form-group col-md-3">
@@ -241,41 +241,41 @@
 
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label class="pt-1"><b>Nr.</b></label> <input required type="text" name="document-number"
+              <label class="pt-1"><b>Nr.</b></label> <input minlength="3" required type="text" name="document-number"
                 class="form-control border border-dark" placeholder="Numero di documento">
             </div>
             <div class="form-group col-md-6">
-              <label class="pt-1"><b>Utenza telefonica</b></label> <input required type="number" name="telephone-number"
+              <label class="pt-1"><b>Utenza telefonica</b></label> <input required type="text" name="telephone-number"
                 class="form-control border border-dark" minlength="8" maxlength="15" placeholder="Numero di telefono">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label class="pt-1"><b>Spostamento iniziato da</b></label> <input required type="text" name="from"
+              <label class="pt-1"><b>Spostamento iniziato da</b></label> <input minlength="3" required type="text" name="from"
                 class="form-control border border-dark"
                 placeholder="Indicare l'indirizzo da cui è iniziato lo spostamento">
             </div>
             <div class="form-group col-md-6">
-              <label class="pt-1"><b>Destinazione</b></label> <input required type="text" name="destination"
+              <label class="pt-1"><b>Destinazione</b></label> <input minlength="3" required type="text" name="destination"
                 class="form-control border border-dark">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label class="pt-1"><b>Regione di partenza</b></label> <input required type="text" name="region-1"
+              <label class="pt-1"><b>Regione di partenza</b></label> <input minlength="3" required type="text" name="region-1"
                 class="form-control border border-dark">
             </div>
             <div class="form-group col-md-6">
-              <label class="pt-1"><b>Regione di arrivo</b></label> <input required type="text" name="region-2"
+              <label class="pt-1"><b>Regione di arrivo</b></label> <input minlength="3" required type="text" name="region-2"
                 class="form-control border border-dark">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <textarea class="form-control border border-dark" name="measure" rows="2"
+              <textarea class="form-control border border-dark" name="measure" rows="2" required 
                 placeholder="..lo spostamento rientra in uno dei casi consentiti dai medesimi provvedimenti ... (indicare quale)"></textarea>
             </div>
           </div>
@@ -307,7 +307,7 @@
           <div class="form-row">
             <div class="form-group col-md-12">
               <label class="pt-1"><b>A questo riguardo, dichiara che</b></label>
-              <textarea class="form-control border border-dark" name="text-box" rows="3"
+              <textarea class="form-control border border-dark" name="text-box" rows="3" required 
                 placeholder="(lavoro presso …, devo effettuare una visita medica, urgente assistenza a congiunti o a persone con disabilità, o esecuzioni di interventi assistenziali in favore di persone in grave stato di necessità, obblighi di affidamento di minori, denunce di reati, rientro dall’estero, altri motivi particolari, etc….)."></textarea>
             </div>
           </div>
@@ -617,8 +617,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
     integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
   </script>
-  <script async src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js'></script>
-  <script async src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js'></script>
 
   <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
   <script type="text/javascript" src="assets/js/main.min.js"></script>

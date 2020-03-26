@@ -14,7 +14,7 @@
         margin-left: auto;
         margin-right: auto;
     }
-    h4 { margin-top: 10px;  margin-bottom: 10px; }
+    h4 h3 { margin-top: 15px;  margin-bottom: 10px; }
     p { margin-top: 1px;  margin-bottom: 2px; }
 	.myspan{
     	margin-left: 8px;
@@ -22,7 +22,7 @@
     	margin-top: 2px;
     	border-bottom: solid 1px;
     	display: inline-block;
-    	font-size: 14px;
+    	font-size: 10pt;
     }
 	.bold-underline{
 		font-weight: 800;
@@ -40,10 +40,10 @@
 		<p><span style="font-size: 10px; opacity: 0.3;">autodichiarazione generata il</span> <span>{{today}}</span></p>
 	</div>
 	<div style="text-align: center;">
-		<h4>AUTODICHIARAZIONE AI SENSI DEGLI ARTT. 46 E 47 D.P.R. N. 445/2000 </h4>
+		<h3>AUTODICHIARAZIONE AI SENSI DEGLI ARTT. 46 E 47 D.P.R. N. 445/2000 </h3>
 	</div>
 	<div style="text-align: justify;">
-		<p>Il sottoscritto <span class="myspan" style="width: 425px;">{{fullname}}</span>, nato il <span class="myspan" style="width: 65px;">{{born}}</span> a <span class="myspan" style="width: 280px;">{{born-town}}</span>, residente in <span class="myspan" style="width: 250px;">{{current-town}}</span>, via <span class="myspan" style="width: 280px;">{{current-address}}</span> e domiciliato in <span class="myspan" style="width: 205px;">{{domicile}}</span>, via <span class="myspan" style="width: 250px;">{{domicile-address}}</span>, identificato a mezzo <span class="myspan" style="width: 220px;">{{identified-on}}</span> nr. <span class="myspan" style="width: 250px;">{{document-number}}</span>, rilasciato da <span class="myspan" style="width: 265px;">{{released-by}}</span> in data <span class="myspan" style="width: 65px;">{{rel-dt}}</span>, utenza telefonica <span class="myspan" style="width: 140px;">{{telephone-number}}</span>, consapevole delle conseguenze penali previste in caso di dichiarazioni mendaci a pubblico ufficiale <b>(art. 495 c.p.)</b></p>
+		<p>Il sottoscritto <span class="myspan" style="width: 425px;">{{fullname}}</span>, nato il <span class="myspan" style="width: 65px;">{{born}}</span> a <span class="myspan" style="width: 280px;">{{born-town}}</span>, residente in <span class="myspan" style="width: 250px;">{{current-town}}</span>, via <span class="myspan" style="width: 225px;">{{current-address}}</span> e domiciliato in <span class="myspan" style="width: 270px;">{{domicile}}</span>, via <span class="myspan" style="width: 250px;">{{domicile-address}}</span>, identificato a mezzo <span class="myspan" style="width: 210px;">{{identified-on}}</span> nr. <span class="myspan" style="width: 250px;">{{document-number}}</span>, rilasciato da <span class="myspan" style="width: 265px;">{{released-by}}</span> in data <span class="myspan" style="width: 65px;">{{rel-dt}}</span>, utenza telefonica <span class="myspan" style="width: 160px;">{{telephone-number}}</span>, consapevole delle conseguenze penali previste in caso di dichiarazioni mendaci a pubblico ufficiale <b>(art. 495 c.p.)</b></p>
 	</div>
 	<div style="text-align: center;"><h4>DICHIARA SOTTO LA PROPRIA RESPONSABILITÀ</h4></div>
 	<ul style="text-align: justify;">
@@ -52,14 +52,14 @@
 			<i>(fatti salvi gli spostamenti disposti dalle Autorità sanitarie);</i>
 	    </span></li>
 		<li><span>
-			<b>che lo spostamento è iniziato da </b> <span class="myspan" style="width: 420px;">{{from}}</span>
-			<i>(indicare l'indirizzo da cui è iniziato) </i> <b>con destinazione</b> <span class="myspan" style="width: 295px;">{{destination}}</span>
+			<b>che lo spostamento è iniziato da </b> <span class="myspan" style="width: 400px;">{{from}}</span>
+			<i>(indicare l'indirizzo da cui è iniziato) </i> <b>con destinazione</b> <span class="myspan" style="width: 285px;">{{destination}}</span>
 		</span></li>
 		<li><span>
 			<b><span class="bold-underline">di essere a conoscenza delle misure di contenimento del contagio vigenti alla data odierna</span> ed adottate ai sensi degli artt. 1 e 2 del decreto legge 25 marzo 2020, n.19, <span class="bold-underline">concernenti le limitazioni alle possibilità di spostamento delle persone fisiche all'interno di tutto il territorio nazionale;<span></b>
 		</span></li>
 		<li><span>
-			<span class="bold-underline">di essere a conoscenza delle ulteriori limitazioni disposte con provvedimenti</span> <b>del<br> Presidente delle Regione</b><span class="myspan" style="width: 235px;">{{region-1}}</span><i> (indicare la Regione di partenza)</i> <b>e del Presidente della Regione</b> <span class="myspan" style="width: 250px;">{{region-2}}</span></i> (indicare la Regione di arrivo)</i> <b>e che lo spostamento rientra in uno dei casi consentiti dai medesimi provvedimenti</b><br><u>{{measure}}</u><i> (indicare quale);</i>
+			<span class="bold-underline">di essere a conoscenza delle ulteriori limitazioni disposte con provvedimenti</span> <b>del<br> Presidente delle Regione</b><span class="myspan" style="width: 250px;">{{region-1}}</span><i> (indicare la Regione di partenza)</i> <b>e del Presidente della Regione</b> <span class="myspan" style="width: 280px;">{{region-2}}</span></i> (indicare la Regione di arrivo)</i> <b>e che lo spostamento rientra in uno dei casi consentiti dai medesimi provvedimenti</b><br><u style="word-wrap: break-word;">{{measure}}</u><i> (indicare quale);</i>
 		</span></li>
 		<li><span><b class="bold-underline">di essere a conoscenza delle sanzioni previste dall'art. 4 del decreto legge 25 marzo 2020, n. 19;</b></span></li>
 
@@ -73,10 +73,11 @@
 		</span></li>
 	</ul>
 	<p><b>A questo riguardo, dichiara che</b><br>
-	<u>{{text-box}}</u>
+	<u style="word-wrap: break-word;">{{text-box}}</u>
 	<br><i style="font-size: 13px;"></b>(lavoro presso …, devo effettuare una visita medica, urgente assistenza a congiunti o a persone con disabilità, o esecuzioni di interventi assistenziali in favore di persone in grave stato di necessità, obblighi di affidamento di minori, denunce di reati, rientro dall’estero, altri motivi particolari, etc….).</b></i></p>
-	<span class="myspan" style="padding-top: 30px; width: 200px;"></span><br>
-	<p style="padding-left: 8px;"><b>Data, ora e luogo del controllo</b></p>
+	<br><br>
+	<span class="myspan" style="width: 250px;"></span><br>
+	<p style="padding-left: 8px; padding-top: -5px;"><b>Data, ora e luogo del controllo</b></p>
 	<table border="0" style="width: 100%;">
 		<tr>
 			<td style="text-align: left;"><p style="margin-left: 5px;">Firma del dichiarante</p></td>
@@ -84,7 +85,7 @@
 		</tr>
 	</table>
 	<img src="{{urlimage}}" width="250" style="margin-left: -25px; margin-top: 10px;">
-	<p style="text-align: center; font-size: 10px; opacity: 0.3; margin-top: -20px;">
+	<p style="text-align: center; font-size: 10px; opacity: 0.3; padding-top: 10px;" >
 		Autodichiarazione generata con miautocertifico.it
 	</p>
 </body>
