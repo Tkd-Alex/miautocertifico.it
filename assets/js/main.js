@@ -149,11 +149,25 @@ $(function () {
     });
 });
 
-$("#complete-p").hide();
+$("#status").hide();
 var outputSelect = "download";
 
+function sleep(s) {
+    var now = new Date().getTime();
+    while (new Date().getTime() < now + (s * 1000)) { /* non faccio niente */ }
+}
+
+var submitIsEnabled = false;
+function enableSubmit() { submitIsEnabled = true; }
+
 $('#myform').submit(function (event) {
-    // event.preventDefault();
+    if (submitIsEnabled == false){
+        $("#status").show();
+        $("#status").find("div").hide();
+        $("#status").find("span").html('<i style="font-size: 13px; margin-left: 5px;"> <i class="fas fa-times text-danger"></i> Perfavore risolvi il captcha per proseguire.</i>');
+        return false;
+    }
+
     var dataUrl = signaturePad.toDataURL();
     var imagen = dataUrl.replace(/^data:image\/(png|jpg);base64,/, "");
     var input = $("<input>")
@@ -170,11 +184,35 @@ $('#myform').submit(function (event) {
         return false;
     }
 
-    $("#complete-p").show();
-    if (outputSelect == "download") $("#complete-p").find("span").text(" Attendi, il tuo download partirà a breve...");
-    else $("#complete-p").find("span").text(" Attendi, riceverai a breve una mail con la tua autocertificazione...");
+    $("#status").show();
+    $("#status").find("div").show();
+    if (outputSelect == "download"){
+        $("#status").find("span").html('<i style="font-size: 13px; margin-left: 5px;"> Attendi, il tuo download partirà a breve...</i>');
+        return true;
+    }
+    else{
+        $("#status").find("span").html('<i style="font-size: 13px; margin-left: 5px;"> Attendi, riceverai a breve una mail con la tua autocertificazione...</i>');
 
-    return true;
+        try {
+            $.ajax({
+                type: "POST",
+                url: 'generatepdf.php',
+                data: $('form').serialize(),
+                async: true,
+                success: function (data) {
+                    var response = JSON.parse(data);
+                    $("#status").find("div").hide();
+                    if (!response.status) $("#status").find("span").html('<i style="font-size: 13px; margin-left: 5px;"> <i class="fas fa-times text-danger"></i> ' + response.message + '</i>');
+                    else if (outputSelect != "download") $("#status").find("span").html('<i style="font-size: 13px; margin-left: 5px;"> <i class="fas fa-check text-success"></i> ' + response.message + '</i>');
+                },
+                complete: function () {},
+                error: function (error) { console.log(error); }
+            });
+        } catch (e) { console.log(e); }
+
+        return false;
+    }
+
 });
 
 $(document).ready(function () {
@@ -184,6 +222,7 @@ $(document).ready(function () {
 
 function selectOutput(idButton) {
     outputSelect = idButton;
+    $("input[name='email']").val("");
     if (idButton == "download") {
         $("#download").removeClass("blu-button-bold-upper");
         $("#download").addClass("blu-button-bold-upper-active");

@@ -323,13 +323,14 @@
 
           <div class="form-row pt-3 pb-3">
             <div class="col-md-6 mx-auto text-center">
-              <div class="g-recaptcha" data-sitekey="6LcijuIUAAAAAIqXMlaUoqD-9eCgZxFWcbVa8wd7"></div>
+              <div class="g-recaptcha" data-callback="enableSubmit"
+                data-sitekey="6LcijuIUAAAAAIqXMlaUoqD-9eCgZxFWcbVa8wd7"></div>
               <br>
               <input id="email-input" type="email" style="margin-bottom: 15px;" class="form-control border border-dark"
                 placeholder="Inserisci la tua email" name="email">
               <button type="submit" style="padding-left: 65px; padding-right: 65px;"
                 class="btn btn-lg btn-primary blu-button-bold-upper">GENERA</button>
-              <div id="complete-p" style="padding-top: 10px;">
+              <div id="status" style="padding-top: 10px;">
                 <div class="spinner-border spinner-border-sm text-primary" role="status"></div>
                 <span><i style="font-size: 13px; margin-left: 5px;">Loading ...</i></span>
               </div>
@@ -520,8 +521,8 @@
   <!-- Bootstrap core JavaScript
     ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
     integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">

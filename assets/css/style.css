@@ -221,3 +221,7 @@ a:focus {
 }
 
 /* END LOGHI IN RIGA */
+
+.g-recaptcha {
+  display: inline-block;
+}

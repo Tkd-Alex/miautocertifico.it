@@ -1,7 +1,5 @@
 <?php
 
-	$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-
 	function generateRandomString($length=10) {
 	    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	    $charactersLength = strlen($characters);
@@ -13,6 +11,7 @@
 	}
 
 	function post_captcha($user_response) {
+		$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 		$dotenv->load();
 
 		$fields_string = '';
@@ -73,8 +72,30 @@
 
 	if ($_SERVER['REQUEST_METHOD'] != 'POST') header('Location: https://www.miautocertifico.it/');
 	else {
+		sleep(3);
+		if(isset($_POST['email']) && $_POST['email'] != "") $fileDownload = false;
+		else $fileDownload = true;
+
+		if(!isset($_POST['g-recaptcha-response'])){
+			if(!$fileDownload){
+				echo json_encode(array(
+					'status' => false,
+					'message' => 'Perfavore risolvi il captcha per proseguire.'
+				));
+				return;
+			} else header('Location: https://www.miautocertifico.it/');
+		}
+
 		$res = post_captcha($_POST['g-recaptcha-response']);
-		if (!$res['success']) header('Location: https://www.miautocertifico.it/');
+		if (!$res['success']){
+			if(!$fileDownload){
+				echo json_encode(array(
+					'status' => false,
+					'message' => 'Perfavore risolvi il captcha per proseguire.'
+				));
+				return;
+			} else header('Location: https://www.miautocertifico.it/');
+		}
 
 		$args = array(
 			"fullname" => 70,
@@ -99,13 +120,15 @@
 		$text = $text = str_replace("{{today}}", date("d/m/Y H:i:s"), $text);
 
 		foreach ($args as $key => $val) {
-			if(!isset($_POST[$key])) header('Location: http://www.miautocertifico.it/');
-			/*
-			if ($key == "born" || $key == "release-data" ){
-				$date = date_create($_POST[$key]);
-				$_POST[$key] = date_format($date,"d/m/Y");
+			if(!isset($_POST[$key])){
+				if(!$fileDownload){
+					echo json_encode(array(
+					'status' => false,
+					'message' => 'Assicurati di aver inserito tutti i campi'
+					));
+					return;
+				} else header('Location: https://www.miautocertifico.it/');
 			}
-			*/
 			if($key == "reason") $text = str_replace($_POST[$key], $_POST[$key] . '" checked', $text);
 			else $text = str_replace("{{" . $key . "}}" , $_POST[$key] , $text);
 		}
@@ -125,7 +148,7 @@
 		unlink($fname . ".png");
 
 		$fname = "AUTOCERTIFICAZIONE-".$_POST["fullname"]."-".date("dmY");
-		if(isset($_POST['email']) && $_POST['email'] != ""){
+		if(!$fileDownload){
 			if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) header('Location: http://www.miautocertifico.it/');
 
 			$mail = new PHPMailer;
@@ -136,6 +159,7 @@
 			$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 			$mail->SMTPAuth = true;
 
+			$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 			$dotenv->load();
 			$mail->Username = getenv('EMAIL');
 			$mail->Password = getenv('PASSWORD');
@@ -157,7 +181,12 @@
 			// $mail->addAttachment('images/phpmailer_mini.png');
 
 			$mail->send();
-			header('Location: https://www.miautocertifico.it/');
+			// header('Location: https://www.miautocertifico.it/');
+			echo json_encode(array(
+				'status' => true,
+				'message' => 'Grazie per aver usufruito di miautocertifico.it. Verifica la tua posta in arrivo o la cartella spam.'
+			));
+			return;
 
 		} else $dompdf->stream($fname.".pdf");
 		// $dompdf->stream("$fname".pdf", array("Attachment" => false));
