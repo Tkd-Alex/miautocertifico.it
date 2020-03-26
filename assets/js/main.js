@@ -143,9 +143,15 @@ $(function () {
 });
 
 $(function () {
-    $("input[name='release-data']").on('input', function (e) {
+    $("input[name='rel-dt']").on('input', function (e) {
         $(this).val($(this).val().replace(/[^0-9\/]/g, ''));
         if ($(this).val().length == 10 && isValidDate($(this).val()) == false) $(this).val("");
+    });
+});
+
+$(function () {
+    $("input[name='telephone-number']").on('input', function (e) {
+        $(this).val($(this).val().replace(/[^0-9\+]/g, ''));
     });
 });
 
@@ -179,8 +185,8 @@ $('#myform').submit(function (event) {
         $("input[name=born]").val("");
         return false;
     }
-    if (isValidDate($("input[name=release-data]").val()) == false) {
-        $("input[name=release-data]").val("");
+    if (isValidDate($("input[name=rel-dt]").val()) == false) {
+        $("input[name=rel-dt]").val("");
         return false;
     }
 
@@ -188,11 +194,11 @@ $('#myform').submit(function (event) {
     $("#status").find("div").show();
     if (outputSelect == "download"){
         $("#status").find("span").html('<i style="font-size: 13px; margin-left: 5px;"> Attendi, il tuo download partirà a breve...</i>');
+        submitIsEnabled = false;
         return true;
     }
     else{
         $("#status").find("span").html('<i style="font-size: 13px; margin-left: 5px;"> Attendi, riceverai a breve una mail con la tua autocertificazione...</i>');
-
         try {
             $.ajax({
                 type: "POST",
@@ -209,7 +215,7 @@ $('#myform').submit(function (event) {
                 error: function (error) { console.log(error); }
             });
         } catch (e) { console.log(e); }
-
+        submitIsEnabled = false;
         return false;
     }
 

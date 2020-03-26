@@ -8,13 +8,13 @@
    <style>
     body {
     	font-family: "Times New Roman", Times, serif;
-        height: auto;
+        font-size: 11pt;
+		height: auto;
         width: 650px;
-        /* to centre page on screen*/
         margin-left: auto;
         margin-right: auto;
     }
-    h3 { margin-top: 15px;  margin-bottom: 10px; }
+    h4 { margin-top: 10px;  margin-bottom: 10px; }
     p { margin-top: 1px;  margin-bottom: 2px; }
 	.myspan{
     	margin-left: 8px;
@@ -24,6 +24,13 @@
     	display: inline-block;
     	font-size: 14px;
     }
+	.bold-underline{
+		font-weight: 800;
+		border-bottom: 2px solid black;
+	}
+	ul {
+       padding-left: 15px;
+    }
 	</style>
 
 </head>
@@ -32,36 +39,52 @@
 	<div style="text-align: right;">
 		<p><span style="font-size: 10px; opacity: 0.3;">autodichiarazione generata il</span> <span>{{today}}</span></p>
 	</div>
-	<div style="text-align: center;"><h3>AUTODICHIARAZIONE AI SENSI DEGLI ARTT. 46 E 47 D.P.R. N. 445/2000</h3></div>
-	<div style="text-align: justify;">
-		<p>Il sottoscritto <span class="myspan" style="width: 540px;">{{fullname}}</span>, nato il <span class="myspan" style="width: 65px;">{{born}}</span> a <span class="myspan" style="width: 495px;">{{born-town}}</span>, residente in <span class="myspan" style="width: 190px;">{{current-town}}</span>, via <span class="myspan" style="width: 325px;">{{current-address}}</span> e domiciliato in <span class="myspan" style="width: 185px;">{{domicile}}</span>, via <span class="myspan" style="width: 220px;">{{domicile-address}}</span>, identificato a mezzo <span class="myspan" style="width: 220px;">{{identified-on}}</span> nr. <span class="myspan" style="width: 315px;">{{document-number}}</span>, rilasciato da <span class="myspan" style="width: 370px;">{{released-by}}</span> in data <span class="myspan" style="width: 65px;">{{release-data}}</span>, utenza telefonica <span class="myspan" style="width: 185px;">{{telephone-number}}</span>, consapevole delle conseguenze penali previste in caso di dichiarazioni mendaci a pubblico ufficiale <b>(art. 495 c.p.)</b></p>
+	<div style="text-align: center;">
+		<h4>AUTODICHIARAZIONE AI SENSI DEGLI ARTT. 46 E 47 D.P.R. N. 445/2000 </h4>
 	</div>
-	<div style="text-align: center;"><h3>DICHIARA SOTTO LA PROPRIA RESPONSABILITÀ</h3></div>
+	<div style="text-align: justify;">
+		<p>Il sottoscritto <span class="myspan" style="width: 425px;">{{fullname}}</span>, nato il <span class="myspan" style="width: 65px;">{{born}}</span> a <span class="myspan" style="width: 280px;">{{born-town}}</span>, residente in <span class="myspan" style="width: 250px;">{{current-town}}</span>, via <span class="myspan" style="width: 280px;">{{current-address}}</span> e domiciliato in <span class="myspan" style="width: 205px;">{{domicile}}</span>, via <span class="myspan" style="width: 250px;">{{domicile-address}}</span>, identificato a mezzo <span class="myspan" style="width: 220px;">{{identified-on}}</span> nr. <span class="myspan" style="width: 250px;">{{document-number}}</span>, rilasciato da <span class="myspan" style="width: 265px;">{{released-by}}</span> in data <span class="myspan" style="width: 65px;">{{rel-dt}}</span>, utenza telefonica <span class="myspan" style="width: 140px;">{{telephone-number}}</span>, consapevole delle conseguenze penali previste in caso di dichiarazioni mendaci a pubblico ufficiale <b>(art. 495 c.p.)</b></p>
+	</div>
+	<div style="text-align: center;"><h4>DICHIARA SOTTO LA PROPRIA RESPONSABILITÀ</h4></div>
 	<ul style="text-align: justify;">
-		<li>di essere a <u>conoscenza delle misure di contenimento del contagio</u> previste dall’art. 1 del Decreto del Presidente del Consiglio dei Ministri 11 marzo 2020, l’art. 1 del Decreto del Presidente del Consiglio dei Ministri 22 marzo 2020, dall’art. 1 dell’Ordinanza del Ministro della salute 20 marzo 2020 concernenti <u>le limitazioni alle possibilità di spostamento delle persone fisiche all’interno di tutto il territorio nazionale</u>;</li>
-		<li><u>di non essere sottoposto alla misura della quarantena e di non essere risultato positivo al COVID-19</u> di cui all’articolo 1, comma 1, lettera c), del Decreto del Presidente del Consiglio dei Ministri 8 marzo 2020;</li>
-		<li><u>di essere a conoscenza delle sanzioni previste dal combinato disposto dell’art. 3, comma 4, del decreto legge 23 febbraio 2020, n. 6 e dell’art. 4, comma 2,</u> del Decreto del Presidente del Consiglio dei Ministri 8 marzo 2020 in <u>caso di inottemperanza delle predette misure di contenimento</u> (art. 650 c.p. salvo che il fatto non costituisca più grave reato);</li>
-		<li>che lo spostamento è iniziato da <span class="myspan" style="width: 390px;">{{from}}</span> (indicare l’indirizzo da cui è iniziato lo spostamento) con destinazione <br><span class="myspan" style="width: 550px;">{{destination}}</span>;</li>
-		<li>
-			che lo spostamento è determinato da:<br>
+		<li><span>
+			<b class="bold-underline">di non essere sottoposto alla misura della quarantena ovvero di non essere risultato positivo al COVID-19</b>
+			<i>(fatti salvi gli spostamenti disposti dalle Autorità sanitarie);</i>
+	    </span></li>
+		<li><span>
+			<b>che lo spostamento è iniziato da </b> <span class="myspan" style="width: 420px;">{{from}}</span>
+			<i>(indicare l'indirizzo da cui è iniziato) </i> <b>con destinazione</b> <span class="myspan" style="width: 295px;">{{destination}}</span>
+		</span></li>
+		<li><span>
+			<b><span class="bold-underline">di essere a conoscenza delle misure di contenimento del contagio vigenti alla data odierna</span> ed adottate ai sensi degli artt. 1 e 2 del decreto legge 25 marzo 2020, n.19, <span class="bold-underline">concernenti le limitazioni alle possibilità di spostamento delle persone fisiche all'interno di tutto il territorio nazionale;<span></b>
+		</span></li>
+		<li><span>
+			<span class="bold-underline">di essere a conoscenza delle ulteriori limitazioni disposte con provvedimenti</span> <b>del<br> Presidente delle Regione</b><span class="myspan" style="width: 235px;">{{region-1}}</span><i> (indicare la Regione di partenza)</i> <b>e del Presidente della Regione</b> <span class="myspan" style="width: 250px;">{{region-2}}</span></i> (indicare la Regione di arrivo)</i> <b>e che lo spostamento rientra in uno dei casi consentiti dai medesimi provvedimenti</b><br><u>{{measure}}</u><i> (indicare quale);</i>
+		</span></li>
+		<li><span><b class="bold-underline">di essere a conoscenza delle sanzioni previste dall'art. 4 del decreto legge 25 marzo 2020, n. 19;</b></span></li>
+
+		<li><span>
+			<b>che lo spostamento è determinato da:<br>
 			<input name="option1" type="radio"> comprovate esigenze lavorative;<br>
-			<input name="option2" type="radio"> assoluta urgenza (“per trasferimenti in comune diverso”, come previsto dall’art. 1, comma 1, lettera b) del Decreto del Presidente del Consiglio dei Ministri 22 marzo 2020);<br>
-			<input name="option3" type="radio"> ituazione di necessità (per spostamenti all’interno dello stesso comune, come previsto dall’art. 1, comma 1, lett. a) del Decreto del Presidente del Consiglio dei Ministri 8 marzo 2020 e art. 1 del Decreto del Presidente del Consiglio dei Ministri 9 marzo 2020);<br>
+			<input name="option2" type="radio"> assoluta urgenza ("per trasferimenti in comune diverso”, come previsto dall’art. 1, comma 1, lettera b) del Decreto del Presidente del Consiglio dei Ministri 22 marzo 2020);<br>
+			<input name="option3" type="radio"> situazione di necessità (per spostamenti all’interno dello stesso comune o che rivestono carattere di quotidianità o che comunque, siano effettuati abitualmente in ragione della brevità delle distanze da percorrere);<br>
 			<input name="option4" type="radio"> motivi di salute.
-		</li>
+			</b>
+		</span></li>
 	</ul>
-	<p>A questo riguardo, dichiara che <br>
+	<p><b>A questo riguardo, dichiara che</b><br>
 	<u>{{text-box}}</u>
-	<br><i style="font-size: 13px;">(lavoro presso …, devo effettuare una visita medica, rientro dall’estero, altri motivi particolari, etc….)</i></p>
-	<p>Data, ora e luogo del controllo</p><br/ >
-	<table border="0" style="width: 100%; padding-top: 25px;">
+	<br><i style="font-size: 13px;"></b>(lavoro presso …, devo effettuare una visita medica, urgente assistenza a congiunti o a persone con disabilità, o esecuzioni di interventi assistenziali in favore di persone in grave stato di necessità, obblighi di affidamento di minori, denunce di reati, rientro dall’estero, altri motivi particolari, etc….).</b></i></p>
+	<span class="myspan" style="padding-top: 30px; width: 200px;"></span><br>
+	<p style="padding-left: 8px;"><b>Data, ora e luogo del controllo</b></p>
+	<table border="0" style="width: 100%;">
 		<tr>
-			<td style="text-align: left;"><p style="margin-left: 15px;">Firma del dichiarante</p></td>
-			<td style="text-align: right;"><p style="margin-right: 15px;">L’Operatore di Polizia</p></td>
+			<td style="text-align: left;"><p style="margin-left: 5px;">Firma del dichiarante</p></td>
+			<td style="text-align: right;"><p style="margin-right: 5px;">L’Operatore di Polizia</p></td>
 		</tr>
 	</table>
 	<img src="{{urlimage}}" width="250" style="margin-left: -25px; margin-top: 10px;">
-	<p style="text-align: center; font-size: 10px; opacity: 0.3; margin-top: -15px;">
+	<p style="text-align: center; font-size: 10px; opacity: 0.3; margin-top: -20px;">
 		Autodichiarazione generata con miautocertifico.it
 	</p>
 </body>

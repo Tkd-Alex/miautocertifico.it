@@ -230,7 +230,7 @@
             </div>
             <div class="form-group col-md-3">
               <label class="pt-1"><b>In data</b></label> <input required type="text" placeholder="gg/mm/aaaa"
-                name="release-data" minlength="10" maxlength="10" class="form-control border border-dark">
+                name="rel-dt" minlength="10" maxlength="10" class="form-control border border-dark">
             </div>
 
           </div>
@@ -241,8 +241,8 @@
                 class="form-control border border-dark" placeholder="Numero di documento">
             </div>
             <div class="form-group col-md-6">
-              <label class="pt-1"><b>Utenza telefonica</b></label> <input required type="text" name="telephone-number"
-                class="form-control border border-dark" placeholder="Numero di telefono">
+              <label class="pt-1"><b>Utenza telefonica</b></label> <input required type="number" name="telephone-number"
+                class="form-control border border-dark" minlength="8" maxlength="15" placeholder="Numero di telefono">
             </div>
           </div>
 
@@ -255,6 +255,24 @@
             <div class="form-group col-md-6">
               <label class="pt-1"><b>Destinazione</b></label> <input required type="text" name="destination"
                 class="form-control border border-dark">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label class="pt-1"><b>Regione di partenza</b></label> <input required type="text" name="region-1"
+                class="form-control border border-dark">
+            </div>
+            <div class="form-group col-md-6">
+              <label class="pt-1"><b>Regione di arrivo</b></label> <input required type="text" name="region-2"
+                class="form-control border border-dark">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <textarea class="form-control border border-dark" name="measure" rows="2"
+                placeholder="..lo spostamento rientra in uno dei casi consentiti dai medesimi provvedimenti ... (indicare quale)"></textarea>
             </div>
           </div>
 
@@ -541,11 +559,13 @@
       <span>Copyright &copy;
         <script>
           document.write(new Date().getFullYear());
-        </script> di www.miautocertifico.it - Fatto con il ❤️ in Italia 🇮🇹 | <u><a style="color: white;"
-            href="https://www.iubenda.com/privacy-policy/22949603" title="Privacy e Cookie policy" target="_blank">Privacy Policy</a></u>
+        </script> di www.miautocertifico.it - Fatto con il ❤️ in Italia 🇮🇹 | <a style="color: white;"
+            href="https://www.iubenda.com/privacy-policy/22949603" title="Privacy e Cookie policy" target="_blank">Privacy Policy</a>
         <br>
-        Creato da <b><a href="https://www.facebook.com/fabrizio.cotugno.5" title="Fabrizio Cotugno" target="_blank">Fabrizio Cotugno</a></b> e 
-        <b><a href="https://www.facebook.com/aalessandromaggio" title="Alessandro Maggio" target="_blank">Alessandro Maggio</a></b>
+        Creato da <b><a style="color: white;" href="https://www.facebook.com/fabrizio.cotugno.5"
+            title="Fabrizio Cotugno" target="_blank">Fabrizio Cotugno</a></b> e
+        <b><a style="color: white;" href="https://www.alessandromaggio.it/" title="Alessandro Maggio"
+            target="_blank">Alessandro Maggio</a></b>
       
         </span>
     </div>
