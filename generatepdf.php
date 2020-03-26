@@ -72,7 +72,6 @@
 
 	if ($_SERVER['REQUEST_METHOD'] != 'POST') header('Location: https://www.miautocertifico.it/');
 	else {
-		sleep(3);
 		if(isset($_POST['email']) && $_POST['email'] != "") $fileDownload = false;
 		else $fileDownload = true;
 
@@ -96,6 +95,7 @@
 				return;
 			} else header('Location: https://www.miautocertifico.it/');
 		}
+                sleep(2);
 
 		$args = array(
 			"fullname" => 70,
