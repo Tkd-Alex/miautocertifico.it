@@ -131,17 +131,17 @@
 		$text = $text = str_replace("{{today}}", date("d/m/Y H:i:s"), $text);
 
 		foreach ($args as $key) {
-			if(!isset($_POST[$key])){
+			if(!isset($_POST[$key]) || trim($_POST[$key]) == ""){
 				if(!$fileDownload){
 					echo json_encode(array(
-					'status' => false,
-					'message' => 'Assicurati di aver inserito tutti i campi'
+						'status' => false,
+						'message' => 'Assicurati di aver inserito tutti i campi'
 					));
 					return;
 				} else header('Location: https://www.miautocertifico.it/');
 			}
 			if($key == "reason") $text = str_replace($_POST[$key], $_POST[$key] . '" checked', $text);
-			else $text = str_replace("{{" . $key . "}}" , $_POST[$key] , $text);
+			else $text = str_replace("{{" . $key . "}}" , trim($_POST[$key]) , $text);
 		}
 
 		$fname = generateRandomString(36);
@@ -154,7 +154,7 @@
 		$dompdf->loadHtml($text);
 		$dompdf->setPaper('A4', 'portrait');
 		$dompdf->set_option('isHtml5ParserEnabled', true);
-		$dompdf->set_option('defaultFont', 'Courier');
+		$dompdf->set_option('defaultFont', 'Times New Roman');
 		$dompdf->render();
 		unlink($fname . ".png");
 
