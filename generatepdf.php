@@ -57,9 +57,9 @@
 		$_SESSION['request_cnt'] = 1;
 	}
 
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
+	// ini_set('display_errors', 1);
+	// ini_set('display_startup_errors', 1);
+	// error_reporting(E_ALL);
 
 	//Import PHPMailer classes into the global namespace
 	use PHPMailer\PHPMailer\PHPMailer;
