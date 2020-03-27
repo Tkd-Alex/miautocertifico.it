@@ -57,13 +57,20 @@
 		$_SESSION['request_cnt'] = 1;
 	}
 
-	// ini_set('display_errors', 1);
-	// ini_set('display_startup_errors', 1);
-	// error_reporting(E_ALL);
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
 
 	//Import PHPMailer classes into the global namespace
 	use PHPMailer\PHPMailer\PHPMailer;
-	use PHPMailer\PHPMailer\SMTP;
+	use PHPMailer\PHPMailer\OAuth;
+
+	// Alias the League Google OAuth2 provider class
+	use League\OAuth2\Client\Provider\Google;
+
+	//SMTP needs accurate times, and the PHP time zone MUST be set
+	//This should be done in your php.ini, but this is how to do it if you don't have access to that
+	date_default_timezone_set('Etc/UTC');
 
 	require 'vendor/autoload.php';
 	use Dompdf\Dompdf;
@@ -165,8 +172,40 @@
 
 			$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 			$dotenv->load();
-			$mail->Username = getenv('EMAIL');
-			$mail->Password = getenv('PASSWORD');
+
+			//Set AuthType to use XOAUTH2
+			$mail->AuthType = 'XOAUTH2';
+
+			//Fill in authentication details here
+			//Either the gmail account owner, or the user that gave consent
+			$email = getenv('EMAIL');
+			$clientId = getenv('GMAILCLIENTID');
+			$clientSecret = getenv('GMAILSECRET');
+
+			//Obtained by configuring and running get_oauth_token.php
+			//after setting up an app in Google Developer Console.
+			$refreshToken = getenv('GMAILREFRESH');
+
+			//Create a new OAuth2 provider instance
+			$provider = new Google(
+				[
+					'clientId' => $clientId,
+					'clientSecret' => $clientSecret,
+				]
+			);
+
+			//Pass the OAuth provider instance to PHPMailer
+			$mail->setOAuth(
+				new OAuth(
+					[
+						'provider' => $provider,
+						'clientId' => $clientId,
+						'clientSecret' => $clientSecret,
+						'refreshToken' => $refreshToken,
+						'userName' => $email,
+					]
+				)
+			);
 
 			$mail->setFrom('info@miautocertifico.it', 'miautocertifico.it');
 			$mail->addReplyTo('info@miautocertifico.it', 'miautocertifico.it');
@@ -174,6 +213,8 @@
 			$mail->addAddress($_POST['email'], $_POST['fullname']);
 
 			$mail->Subject = $fname;
+
+			$mail->CharSet = PHPMailer::CHARSET_UTF8;
 
 			$html = file_get_contents('email.html');
 			$html = $html = str_replace("{{fullname}}", $_POST['fullname'], $html);
