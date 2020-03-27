@@ -144,6 +144,7 @@
 			else $text = str_replace("{{" . $key . "}}" , trim($_POST[$key]) , $text);
 		}
 
+		// $fname = "tmp/" . generateRandomString(36);
 		$fname = generateRandomString(36);
 		$data_uri = $_POST["imageData"];
 		$decoded_image = base64_decode($data_uri);
